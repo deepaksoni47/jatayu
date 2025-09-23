@@ -18,6 +18,7 @@ import {
 } from "recharts";
 import { cn } from "@/lib/utils";
 import { memo, useMemo } from "react";
+import { RecentDiscoveriesFeed } from "@/components/dashboard/recent-discoveries-feed";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
@@ -105,6 +106,14 @@ export default function DashboardPage() {
   const { data: habTimeline } = useSWR("/data/hab_timeline.json", fetcher, {
     revalidateOnFocus: false,
   });
+  const { data: discoveries } = useSWR(
+    "/data/recent_discoveries.json",
+    fetcher,
+    {
+      refreshInterval: 60000, // Refresh every minute for new discoveries
+      revalidateOnFocus: false,
+    }
+  );
 
   const anomalies = useMemo(
     () => summary?.anomalies ?? [],
@@ -254,6 +263,16 @@ export default function DashboardPage() {
             )}
           </CardContent>
         </Card>
+      </div>
+
+      {/* Recent Discoveries Feed - Full Width Section */}
+      <div className="mt-6">
+        <div
+          className="card-shimmer animate-fade-slide-in w-full"
+          style={{ animationDelay: "800ms" }}
+        >
+          <RecentDiscoveriesFeed data={discoveries} />
+        </div>
       </div>
     </AppShell>
   );
