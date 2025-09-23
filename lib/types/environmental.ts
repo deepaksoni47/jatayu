@@ -161,12 +161,213 @@ export interface EcosystemStressMarkers {
   timestamp: string;
 }
 
+// Ocean Alerts Types
+export interface HABAlert {
+  id: string;
+  location: {
+    name: string;
+    coordinates: [number, number];
+  };
+  severity: "low" | "moderate" | "high" | "extreme";
+  species: string;
+  concentration: number;
+  unit: string;
+  status: HealthStatus;
+  detected_at: string;
+  estimated_duration: string;
+  affected_area_km2: number;
+  toxin_level: number;
+}
+
+export interface ExtremeEvent {
+  id: string;
+  type: "cyclone" | "tsunami" | "ocean_heatwave" | "dead_zone" | "storm_surge";
+  name?: string;
+  location: {
+    name: string;
+    coordinates: [number, number];
+    radius_km?: number;
+  };
+  severity: "minor" | "moderate" | "major" | "extreme";
+  status: "active" | "monitoring" | "resolved";
+  start_time: string;
+  end_time?: string;
+  peak_intensity?: number;
+  affected_population?: number;
+  marine_impact_level: "low" | "moderate" | "high" | "severe";
+  description: string;
+}
+
+export interface PollutionSpike {
+  id: string;
+  pollutant_type: "oil" | "plastic" | "chemical" | "sewage" | "industrial";
+  location: {
+    name: string;
+    coordinates: [number, number];
+  };
+  concentration: number;
+  unit: string;
+  baseline_level: number;
+  spike_factor: number;
+  severity: "minor" | "moderate" | "major" | "critical";
+  detected_at: string;
+  source_identified: boolean;
+  source_description?: string;
+  containment_status: "none" | "partial" | "contained";
+}
+
+export interface OceanAlerts {
+  hab_alerts: HABAlert[];
+  extreme_events: ExtremeEvent[];
+  pollution_spikes: PollutionSpike[];
+  total_active_alerts: number;
+  last_updated: string;
+}
+
+// Data Updates Types
+export interface DatasetIngestion {
+  dataset_name: string;
+  source: string;
+  last_ingestion: string;
+  status: "completed" | "in_progress" | "failed" | "pending";
+  records_processed: number;
+  file_size_mb: number;
+  processing_time_minutes: number;
+  quality_score: number;
+  errors_count: number;
+}
+
+export interface NewDataset {
+  name: string;
+  description: string;
+  source: string;
+  added_date: string;
+  data_type: "satellite" | "sensor" | "survey" | "model" | "citizen_science";
+  geographic_coverage: string;
+  temporal_coverage: string;
+  parameters: string[];
+  status: "active" | "processing" | "validation_pending";
+}
+
+export interface PendingVerification {
+  id: string;
+  dataset_name: string;
+  verification_type:
+    | "quality_check"
+    | "peer_review"
+    | "field_validation"
+    | "cross_reference";
+  submitted_by: string;
+  submitted_date: string;
+  priority: "low" | "medium" | "high" | "urgent";
+  estimated_completion: string;
+  current_stage: string;
+  issues_found: number;
+}
+
+export interface DataUpdates {
+  recent_ingestions: DatasetIngestion[];
+  new_datasets: NewDataset[];
+  pending_verifications: PendingVerification[];
+  system_status: {
+    total_datasets: number;
+    active_ingestions: number;
+    failed_ingestions: number;
+    storage_usage_gb: number;
+    last_system_check: string;
+  };
+}
+
+// Recovery Progress Types
+export interface CoralReefRestoration {
+  project_id: string;
+  location: {
+    name: string;
+    coordinates: [number, number];
+  };
+  project_name: string;
+  start_date: string;
+  target_completion: string;
+  current_progress_percent: number;
+  area_restored_hectares: number;
+  target_area_hectares: number;
+  coral_species_planted: string[];
+  survival_rate_percent: number;
+  funding_source: string;
+  status: "planning" | "active" | "monitoring" | "completed" | "suspended";
+  last_monitoring_date: string;
+  health_improvement_score: number;
+}
+
+export interface MangroveReplantation {
+  project_id: string;
+  location: {
+    name: string;
+    coordinates: [number, number];
+  };
+  project_name: string;
+  start_date: string;
+  target_completion: string;
+  current_progress_percent: number;
+  trees_planted: number;
+  target_trees: number;
+  area_covered_hectares: number;
+  species_used: string[];
+  survival_rate_percent: number;
+  carbon_sequestration_estimate_tons: number;
+  community_involvement: boolean;
+  status: "planning" | "planting" | "monitoring" | "completed";
+}
+
+export interface SpeciesRecovery {
+  species_name: string;
+  scientific_name: string;
+  conservation_status:
+    | "critically_endangered"
+    | "endangered"
+    | "vulnerable"
+    | "near_threatened"
+    | "recovering";
+  location: {
+    name: string;
+    coordinates: [number, number];
+  };
+  baseline_population: number;
+  current_population: number;
+  target_population: number;
+  recovery_progress_percent: number;
+  program_start_date: string;
+  estimated_recovery_date: string;
+  key_threats: string[];
+  conservation_measures: string[];
+  population_trend: "increasing" | "stable" | "decreasing";
+  last_survey_date: string;
+}
+
+export interface RecoveryProgress {
+  coral_reef_projects: CoralReefRestoration[];
+  mangrove_projects: MangroveReplantation[];
+  species_recovery: SpeciesRecovery[];
+  summary_stats: {
+    total_projects: number;
+    completed_projects: number;
+    active_projects: number;
+    total_funding_usd: number;
+    areas_under_restoration_hectares: number;
+    species_under_recovery_programs: number;
+  };
+  last_updated: string;
+}
+
 // Combined Environmental Health Data
 export interface EnvironmentalHealthData {
   ocean_health_index: OceanHealthIndex;
   water_quality: WaterQualityIndicators[];
   pollution_indicators: PollutionIndicators[];
   ecosystem_stress: EcosystemStressMarkers[];
+  ocean_alerts: OceanAlerts;
+  data_updates: DataUpdates;
+  recovery_progress: RecoveryProgress;
   last_updated: string;
   data_sources: string[];
 }

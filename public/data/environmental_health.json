@@ -409,6 +409,386 @@
       "timestamp": "2025-09-23T07:15:00Z"
     }
   ],
+  "ocean_alerts": {
+    "hab_alerts": [
+      {
+        "id": "HAB-2025-001",
+        "location": {
+          "name": "Cochin Backwaters",
+          "coordinates": [9.96, 76.25]
+        },
+        "severity": "high",
+        "species": "Noctiluca scintillans",
+        "concentration": 150000,
+        "unit": "cells/L",
+        "status": "critical",
+        "detected_at": "2025-09-22T14:30:00Z",
+        "estimated_duration": "7-10 days",
+        "affected_area_km2": 25.5,
+        "toxin_level": 8.2
+      },
+      {
+        "id": "HAB-2025-002",
+        "location": {
+          "name": "Mangalore Coast",
+          "coordinates": [12.85, 74.88]
+        },
+        "severity": "moderate",
+        "species": "Trichodesmium erythraeum",
+        "concentration": 85000,
+        "unit": "cells/L",
+        "status": "warning",
+        "detected_at": "2025-09-23T08:15:00Z",
+        "estimated_duration": "3-5 days",
+        "affected_area_km2": 12.8,
+        "toxin_level": 4.1
+      }
+    ],
+    "extreme_events": [
+      {
+        "id": "EXT-2025-003",
+        "type": "ocean_heatwave",
+        "location": {
+          "name": "Arabian Sea - Western Coast",
+          "coordinates": [15.0, 72.0],
+          "radius_km": 200
+        },
+        "severity": "major",
+        "status": "active",
+        "start_time": "2025-09-20T00:00:00Z",
+        "peak_intensity": 4.2,
+        "marine_impact_level": "high",
+        "description": "Marine heatwave with temperatures 4.2°C above long-term average, affecting coral reefs and fish populations"
+      },
+      {
+        "id": "EXT-2025-004",
+        "type": "dead_zone",
+        "location": {
+          "name": "Mumbai Harbor",
+          "coordinates": [18.92, 72.82],
+          "radius_km": 15
+        },
+        "severity": "moderate",
+        "status": "monitoring",
+        "start_time": "2025-09-21T12:00:00Z",
+        "marine_impact_level": "moderate",
+        "description": "Hypoxic zone detected with dissolved oxygen levels below 2 mg/L, monitoring fish mortality"
+      },
+      {
+        "id": "EXT-2025-005",
+        "type": "cyclone",
+        "name": "Cyclone Asna",
+        "location": {
+          "name": "Gujarat Coast",
+          "coordinates": [22.5, 69.0],
+          "radius_km": 300
+        },
+        "severity": "major",
+        "status": "resolved",
+        "start_time": "2025-09-15T06:00:00Z",
+        "end_time": "2025-09-18T18:00:00Z",
+        "peak_intensity": 120,
+        "affected_population": 250000,
+        "marine_impact_level": "severe",
+        "description": "Category 3 cyclone with sustained winds of 120 km/h, caused significant coastal and marine ecosystem damage"
+      }
+    ],
+    "pollution_spikes": [
+      {
+        "id": "POL-2025-006",
+        "pollutant_type": "oil",
+        "location": {
+          "name": "Kandla Port",
+          "coordinates": [23.03, 70.22]
+        },
+        "concentration": 150,
+        "unit": "mg/L",
+        "baseline_level": 2.5,
+        "spike_factor": 60,
+        "severity": "critical",
+        "detected_at": "2025-09-23T06:45:00Z",
+        "source_identified": true,
+        "source_description": "Small tanker fuel leak during docking operations",
+        "containment_status": "partial"
+      },
+      {
+        "id": "POL-2025-007",
+        "pollutant_type": "chemical",
+        "location": {
+          "name": "Chennai Harbor",
+          "coordinates": [13.08, 80.27]
+        },
+        "concentration": 85,
+        "unit": "μg/L",
+        "baseline_level": 5,
+        "spike_factor": 17,
+        "severity": "major",
+        "detected_at": "2025-09-22T20:30:00Z",
+        "source_identified": false,
+        "containment_status": "none"
+      }
+    ],
+    "total_active_alerts": 7,
+    "last_updated": "2025-09-23T10:00:00Z"
+  },
+  "data_updates": {
+    "recent_ingestions": [
+      {
+        "dataset_name": "MODIS Ocean Color Daily",
+        "source": "NASA MODIS Aqua",
+        "last_ingestion": "2025-09-23T09:45:00Z",
+        "status": "completed",
+        "records_processed": 156789,
+        "file_size_mb": 245.6,
+        "processing_time_minutes": 12,
+        "quality_score": 96.8,
+        "errors_count": 23
+      },
+      {
+        "dataset_name": "INCOIS Sea Surface Temperature",
+        "source": "INCOIS Satellite Data",
+        "last_ingestion": "2025-09-23T08:30:00Z",
+        "status": "completed",
+        "records_processed": 89432,
+        "file_size_mb": 134.2,
+        "processing_time_minutes": 8,
+        "quality_score": 98.2,
+        "errors_count": 12
+      },
+      {
+        "dataset_name": "Coastal Water Quality Sensors",
+        "source": "NIOT Field Stations",
+        "last_ingestion": "2025-09-23T09:15:00Z",
+        "status": "in_progress",
+        "records_processed": 45621,
+        "file_size_mb": 67.8,
+        "processing_time_minutes": 15,
+        "quality_score": 94.5,
+        "errors_count": 45
+      }
+    ],
+    "new_datasets": [
+      {
+        "name": "Plastic Debris Tracking - Arabian Sea",
+        "description": "High-resolution satellite imagery analysis for plastic debris detection and tracking",
+        "source": "ESA Sentinel-2",
+        "added_date": "2025-09-22T14:00:00Z",
+        "data_type": "satellite",
+        "geographic_coverage": "Arabian Sea, West Coast of India",
+        "temporal_coverage": "Daily, 2023-present",
+        "parameters": [
+          "plastic_concentration",
+          "debris_size",
+          "movement_vectors"
+        ],
+        "status": "active"
+      },
+      {
+        "name": "Coral Health Monitoring - Lakshadweep",
+        "description": "Underwater drone surveys of coral reef health and bleaching status",
+        "source": "CMLRE Drone Surveys",
+        "added_date": "2025-09-21T10:30:00Z",
+        "data_type": "survey",
+        "geographic_coverage": "Lakshadweep Islands",
+        "temporal_coverage": "Weekly, 2025-present",
+        "parameters": [
+          "coral_coverage",
+          "bleaching_severity",
+          "species_diversity"
+        ],
+        "status": "validation_pending"
+      }
+    ],
+    "pending_verifications": [
+      {
+        "id": "VER-2025-001",
+        "dataset_name": "Mangrove Carbon Sequestration Data",
+        "verification_type": "field_validation",
+        "submitted_by": "Dr. Priya Sharma, ICFRE",
+        "submitted_date": "2025-09-18T16:20:00Z",
+        "priority": "high",
+        "estimated_completion": "2025-09-25T12:00:00Z",
+        "current_stage": "Field validation in progress",
+        "issues_found": 2
+      },
+      {
+        "id": "VER-2025-002",
+        "dataset_name": "Fish Population Acoustic Survey",
+        "verification_type": "peer_review",
+        "submitted_by": "Marine Biology Institute, Goa",
+        "submitted_date": "2025-09-20T09:45:00Z",
+        "priority": "medium",
+        "estimated_completion": "2025-09-28T17:00:00Z",
+        "current_stage": "Expert panel review",
+        "issues_found": 0
+      }
+    ],
+    "system_status": {
+      "total_datasets": 247,
+      "active_ingestions": 3,
+      "failed_ingestions": 1,
+      "storage_usage_gb": 1847.3,
+      "last_system_check": "2025-09-23T09:30:00Z"
+    }
+  },
+  "recovery_progress": {
+    "coral_reef_projects": [
+      {
+        "project_id": "CORAL-REST-001",
+        "location": {
+          "name": "Gulf of Mannar Marine National Park",
+          "coordinates": [9.28, 79.15]
+        },
+        "project_name": "Gulf of Mannar Coral Restoration Initiative",
+        "start_date": "2023-03-15T00:00:00Z",
+        "target_completion": "2026-03-15T00:00:00Z",
+        "current_progress_percent": 65,
+        "area_restored_hectares": 32.5,
+        "target_area_hectares": 50,
+        "coral_species_planted": [
+          "Acropora formosa",
+          "Montipora digitata",
+          "Pocillopora damicornis"
+        ],
+        "survival_rate_percent": 78,
+        "funding_source": "Ministry of Environment and Climate Change",
+        "status": "active",
+        "last_monitoring_date": "2025-09-15T00:00:00Z",
+        "health_improvement_score": 72
+      },
+      {
+        "project_id": "CORAL-REST-002",
+        "location": {
+          "name": "Lakshadweep Coral Gardens",
+          "coordinates": [10.32, 72.78]
+        },
+        "project_name": "Lakshadweep Climate Resilient Coral Project",
+        "start_date": "2024-01-10T00:00:00Z",
+        "target_completion": "2027-01-10T00:00:00Z",
+        "current_progress_percent": 35,
+        "area_restored_hectares": 14.2,
+        "target_area_hectares": 40,
+        "coral_species_planted": [
+          "Acropora cervicornis",
+          "Dendrogyra cylindrus"
+        ],
+        "survival_rate_percent": 82,
+        "funding_source": "Global Environment Facility",
+        "status": "active",
+        "last_monitoring_date": "2025-09-10T00:00:00Z",
+        "health_improvement_score": 68
+      }
+    ],
+    "mangrove_projects": [
+      {
+        "project_id": "MANG-REST-001",
+        "location": {
+          "name": "Sundarbans Buffer Zone",
+          "coordinates": [21.95, 88.85]
+        },
+        "project_name": "Sundarbans Mangrove Restoration Program",
+        "start_date": "2022-06-01T00:00:00Z",
+        "target_completion": "2025-06-01T00:00:00Z",
+        "current_progress_percent": 88,
+        "trees_planted": 176000,
+        "target_trees": 200000,
+        "area_covered_hectares": 450,
+        "species_used": [
+          "Rhizophora mucronata",
+          "Avicennia marina",
+          "Bruguiera gymnorrhiza"
+        ],
+        "survival_rate_percent": 85,
+        "carbon_sequestration_estimate_tons": 2340,
+        "community_involvement": true,
+        "status": "monitoring"
+      },
+      {
+        "project_id": "MANG-REST-002",
+        "location": {
+          "name": "Godavari Delta",
+          "coordinates": [16.75, 82.25]
+        },
+        "project_name": "Godavari Mangrove Conservation Initiative",
+        "start_date": "2023-09-01T00:00:00Z",
+        "target_completion": "2026-09-01T00:00:00Z",
+        "current_progress_percent": 42,
+        "trees_planted": 84000,
+        "target_trees": 200000,
+        "area_covered_hectares": 180,
+        "species_used": ["Rhizophora apiculata", "Avicennia officinalis"],
+        "survival_rate_percent": 79,
+        "carbon_sequestration_estimate_tons": 1120,
+        "community_involvement": true,
+        "status": "planting"
+      }
+    ],
+    "species_recovery": [
+      {
+        "species_name": "Olive Ridley Sea Turtle",
+        "scientific_name": "Lepidochelys olivacea",
+        "conservation_status": "vulnerable",
+        "location": {
+          "name": "Odisha Coast",
+          "coordinates": [19.85, 85.9]
+        },
+        "baseline_population": 12000,
+        "current_population": 18500,
+        "target_population": 25000,
+        "recovery_progress_percent": 54.2,
+        "program_start_date": "2015-01-01T00:00:00Z",
+        "estimated_recovery_date": "2030-12-31T00:00:00Z",
+        "key_threats": [
+          "plastic pollution",
+          "coastal development",
+          "fishing nets"
+        ],
+        "conservation_measures": [
+          "nesting beach protection",
+          "community awareness",
+          "fishing gear modification"
+        ],
+        "population_trend": "increasing",
+        "last_survey_date": "2025-08-15T00:00:00Z"
+      },
+      {
+        "species_name": "Great Indian Bustard",
+        "scientific_name": "Ardeotis nigriceps",
+        "conservation_status": "critically_endangered",
+        "location": {
+          "name": "Kutch Desert Coast",
+          "coordinates": [23.25, 69.75]
+        },
+        "baseline_population": 50,
+        "current_population": 128,
+        "target_population": 500,
+        "recovery_progress_percent": 17.3,
+        "program_start_date": "2018-04-01T00:00:00Z",
+        "estimated_recovery_date": "2035-04-01T00:00:00Z",
+        "key_threats": [
+          "habitat loss",
+          "power line collisions",
+          "human disturbance"
+        ],
+        "conservation_measures": [
+          "captive breeding",
+          "habitat restoration",
+          "power line modification"
+        ],
+        "population_trend": "increasing",
+        "last_survey_date": "2025-07-20T00:00:00Z"
+      }
+    ],
+    "summary_stats": {
+      "total_projects": 14,
+      "completed_projects": 3,
+      "active_projects": 11,
+      "total_funding_usd": 45600000,
+      "areas_under_restoration_hectares": 1247,
+      "species_under_recovery_programs": 8
+    },
+    "last_updated": "2025-09-23T10:00:00Z"
+  },
   "last_updated": "2025-09-23T10:00:00Z",
   "data_sources": [
     "INCOIS (Indian National Centre for Ocean Information Services)",
