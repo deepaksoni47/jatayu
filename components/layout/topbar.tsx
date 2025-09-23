@@ -1,13 +1,30 @@
-"use client"
-import { Bell, Search } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+"use client";
+import { Bell, Search, Menu } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-export function Topbar() {
+interface TopbarProps {
+  onMenuClick?: () => void;
+}
+
+export function Topbar({ onMenuClick }: TopbarProps) {
+  const isMobile = useIsMobile();
   return (
     <header className="sticky top-0 z-30 bg-transparent">
       <div className="mx-auto max-w-[1400px] px-4 pt-3">
         <div className="glass-card ring-1 ring-primary/10 px-3 md:px-4 py-2.5 md:py-3 flex items-center gap-3 md:gap-4">
+          {/* Mobile menu button */}
+          {isMobile && (
+            <button
+              onClick={onMenuClick}
+              className="p-2 rounded-md hover:bg-secondary/50 focus-visible:ring-2 focus-visible:ring-primary/40 transition-colors"
+              aria-label="Open menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          )}
+
           {/* Brand title */}
           <div className="hidden md:block">
             <h1
@@ -22,7 +39,10 @@ export function Topbar() {
           {/* Search */}
           <div className="ml-auto hidden md:block w-[380px] lg:w-[460px]">
             <div className="relative">
-              <Search className="absolute left-2 top-2.5 size-4 text-muted-foreground" aria-hidden />
+              <Search
+                className="absolute left-2 top-2.5 size-4 text-muted-foreground"
+                aria-hidden
+              />
               <Input
                 className="pl-8 h-9 bg-secondary/40 border-border focus-visible:ring-2 focus-visible:ring-primary/50 transition"
                 placeholder="Search datasets, species, alerts..."
@@ -30,6 +50,16 @@ export function Topbar() {
               />
             </div>
           </div>
+
+          {/* Mobile search button */}
+          {isMobile && (
+            <button
+              className="p-2 rounded-md hover:bg-secondary/50 focus-visible:ring-2 focus-visible:ring-primary/40 transition-colors md:hidden"
+              aria-label="Search"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+          )}
 
           {/* Actions */}
           <div className="ml-auto md:ml-0 flex items-center gap-2">
@@ -48,5 +78,5 @@ export function Topbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
