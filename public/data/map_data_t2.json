@@ -1,0 +1,5 @@
+[
+  { "id": "p1", "lat": 12.4, "lon": 74.7, "salinity": 34.0, "temp": 27.4, "species": "Sardine" },
+  { "id": "p2", "lat": 13.2, "lon": 73.5, "salinity": 35.0, "temp": 25.1, "species": "Tuna" },
+  { "id": "p4", "lat": 12.0, "lon": 74.9, "salinity": 34.0, "temp": 27.5, "species": "Mobula" }
+]

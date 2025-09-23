@@ -1,0 +1,5 @@
+[
+  { "id": "p1", "lat": 12.3, "lon": 74.8, "salinity": 34.1, "temp": 27.2, "species": "Sardine" },
+  { "id": "p2", "lat": 13.1, "lon": 73.7, "salinity": 35.2, "temp": 25.4, "species": "Tuna" },
+  { "id": "p3", "lat": 11.9, "lon": 75.1, "salinity": 33.9, "temp": 26.8, "species": "Mackerel", "alerts": "HAB watch" }
+]

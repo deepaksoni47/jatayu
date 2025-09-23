@@ -1,0 +1,14 @@
+{
+  "ageDistribution": [
+    { "species": "Sardine", "count": 120 },
+    { "species": "Mackerel", "count": 80 },
+    { "species": "Tuna", "count": 50 },
+    { "species": "Anchovy", "count": 95 }
+  ],
+  "predictions": [
+    { "species": "Sardine", "group": "1–2 years", "accuracy": 92 },
+    { "species": "Mackerel", "group": "2–3 years", "accuracy": 88 },
+    { "species": "Tuna", "group": "3–5 years", "accuracy": 85 }
+  ],
+  "boxes": [{ "x": 12, "y": 18, "w": 22, "h": 15 }, { "x": 48, "y": 36, "w": 18, "h": 12 }]
+}

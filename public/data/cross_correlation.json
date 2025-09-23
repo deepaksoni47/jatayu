@@ -1,0 +1,6 @@
+[
+  { "label": "Zone A", "temperature": 26.1, "salinity": 34.5, "speciesCount": 22 },
+  { "label": "Zone B", "temperature": 27.2, "salinity": 34.1, "speciesCount": 28 },
+  { "label": "Zone C", "temperature": 25.4, "salinity": 35.2, "speciesCount": 18 },
+  { "label": "Zone D", "temperature": 26.8, "salinity": 33.9, "speciesCount": 24 }
+]

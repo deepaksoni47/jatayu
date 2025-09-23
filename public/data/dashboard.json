@@ -1,0 +1,11 @@
+{
+  "datasets": 1245,
+  "species": 318,
+  "alerts": 7,
+  "jobs": 12,
+  "anomalies": [
+    { "title": "Thermal anomaly detected", "time": "2 min ago", "detail": "Sea surface temp spike near 12.3N, 74.8E" },
+    { "title": "Rare species signal", "time": "8 min ago", "detail": "eDNA hints of Mobula birostris near reef edge" },
+    { "title": "Salinity drop", "time": "12 min ago", "detail": "Freshwater inflow suspected near estuary" }
+  ]
+}

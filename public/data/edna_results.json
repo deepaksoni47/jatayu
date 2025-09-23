@@ -1,0 +1,15 @@
+{
+  "richness": [
+    { "date": "2025-08-01", "richness": 18 },
+    { "date": "2025-08-08", "richness": 20 },
+    { "date": "2025-08-15", "richness": 24 },
+    { "date": "2025-08-22", "richness": 27 },
+    { "date": "2025-08-29", "richness": 31 }
+  ],
+  "abundance": [
+    { "location": "Site A", "abundance": 120 },
+    { "location": "Site B", "abundance": 160 },
+    { "location": "Site C", "abundance": 95 }
+  ],
+  "rare": [{ "species": "Mobula birostris", "confidence": 91 }, { "species": "Sphyrna lewini", "confidence": 88 }]
+}

@@ -1,0 +1,7 @@
+{
+  "alerts": [
+    { "location": "12.3N, 74.8E", "severity": "High", "timestamp": "2025-09-12T08:10:00Z", "x": 48, "y": 42 },
+    { "location": "11.9N, 75.1E", "severity": "Medium", "timestamp": "2025-09-12T07:50:00Z", "x": 55, "y": 48 },
+    { "location": "13.2N, 73.8E", "severity": "High", "timestamp": "2025-09-12T07:25:00Z", "x": 35, "y": 35 }
+  ]
+}

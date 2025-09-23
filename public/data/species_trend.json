@@ -1,0 +1,9 @@
+[
+  { "date": "2025-08-01", "detections": 120 },
+  { "date": "2025-08-08", "detections": 138 },
+  { "date": "2025-08-15", "detections": 160 },
+  { "date": "2025-08-22", "detections": 172 },
+  { "date": "2025-08-29", "detections": 185 },
+  { "date": "2025-09-05", "detections": 201 },
+  { "date": "2025-09-12", "detections": 218 }
+]

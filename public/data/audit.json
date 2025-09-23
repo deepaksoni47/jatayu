@@ -1,0 +1,7 @@
+{
+  "events": [
+    { "time": "2025-09-12T08:00:00Z", "user": "ananya@incois.gov", "action": "Viewed HAB alerts dashboard" },
+    { "time": "2025-09-12T08:05:00Z", "user": "rajesh@cmlre.gov", "action": "Downloaded policy report" },
+    { "time": "2025-09-12T08:12:00Z", "user": "meera@fisheries.gov", "action": "Uploaded eDNA dataset sample" }
+  ]
+}

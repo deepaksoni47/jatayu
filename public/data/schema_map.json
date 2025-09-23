@@ -1,0 +1,15 @@
+{
+  "dataset": "marine_observations_v1",
+  "fields": [
+    { "name": "domain", "type": "enum", "values": ["Oceanography", "Fisheries", "eDNA"] },
+    { "name": "species", "type": "string", "nullable": true },
+    { "name": "depth_m", "type": "number" },
+    { "name": "temperature_c", "type": "number" },
+    { "name": "salinity_psu", "type": "number" },
+    { "name": "lat", "type": "number" },
+    { "name": "lon", "type": "number" },
+    { "name": "timestamp", "type": "datetime" }
+  ],
+  "primaryKey": ["lat", "lon", "timestamp"],
+  "standards": ["CF-1.9", "ISO 19115"]
+}

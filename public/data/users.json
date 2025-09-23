@@ -1,0 +1,7 @@
+{
+  "users": [
+    { "name": "Ananya Gupta", "email": "ananya@incois.gov", "role": "Scientist" },
+    { "name": "Rajesh Kumar", "email": "rajesh@cmlre.gov", "role": "Policymaker" },
+    { "name": "Meera Iyer", "email": "meera@fisheries.gov", "role": "Fisheries Manager" }
+  ]
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "domain": "Oceanography",
+    "species": "—",
+    "depth_m": 14,
+    "temperature_c": 27.2,
+    "salinity_psu": 34.1,
+    "lat": 12.3,
+    "lon": 74.8,
+    "timestamp": "2025-09-12T08:00:00Z"
+  },
+  {
+    "domain": "Fisheries",
+    "species": "Sardinella longiceps",
+    "depth_m": 22,
+    "temperature_c": 26.8,
+    "salinity_psu": 33.9,
+    "lat": 11.9,
+    "lon": 75.1,
+    "timestamp": "2025-09-12T07:40:00Z"
+  },
+  {
+    "domain": "eDNA",
+    "species": "Mobula birostris",
+    "depth_m": 8,
+    "temperature_c": 27.5,
+    "salinity_psu": 34.0,
+    "lat": 12.0,
+    "lon": 74.9,
+    "timestamp": "2025-09-12T07:30:00Z"
+  },
+  {
+    "domain": "Fisheries",
+    "species": "Thunnus albacares",
+    "depth_m": 60,
+    "temperature_c": 25.4,
+    "salinity_psu": 35.2,
+    "lat": 13.2,
+    "lon": 73.8,
+    "timestamp": "2025-09-12T07:25:00Z"
+  },
+  {
+    "domain": "Oceanography",
+    "species": "—",
+    "depth_m": 30,
+    "temperature_c": 26.1,
+    "salinity_psu": 34.5,
+    "lat": 13.1,
+    "lon": 73.7,
+    "timestamp": "2025-09-12T07:20:00Z"
+  }
+]
