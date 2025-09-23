@@ -10,6 +10,7 @@ import {
   FileText,
   Shield,
   SettingsIcon,
+  Heart,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { memo } from "react";
@@ -18,6 +19,7 @@ const items = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/ingestion", label: "Data Ingestion", icon: Upload },
   { href: "/ai", label: "AI Analytics", icon: ActivitySquare },
+  { href: "/environmental", label: "Environmental Health", icon: Heart },
   { href: "/visualization", label: "Visualization (WebGIS)", icon: MapIcon },
   { href: "/specialized/hab", label: "HAB Alerts", icon: Layers },
   { href: "/specialized/correlations", label: "Correlations", icon: Layers },

@@ -1,0 +1,421 @@
+{
+  "ocean_health_index": {
+    "composite_score": {
+      "value": 72,
+      "status": "warning",
+      "trend": "declining",
+      "lastUpdated": "2025-09-23T10:00:00Z"
+    },
+    "sub_indices": {
+      "food_provision": {
+        "value": 68,
+        "status": "warning",
+        "trend": "declining",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "artisanal_opportunity": {
+        "value": 75,
+        "status": "warning",
+        "trend": "stable",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "natural_products": {
+        "value": 82,
+        "status": "healthy",
+        "trend": "improving",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "carbon_storage": {
+        "value": 89,
+        "status": "healthy",
+        "trend": "stable",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "coastal_protection": {
+        "value": 65,
+        "status": "warning",
+        "trend": "declining",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "tourism_recreation": {
+        "value": 78,
+        "status": "warning",
+        "trend": "stable",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "livelihoods_economies": {
+        "value": 71,
+        "status": "warning",
+        "trend": "declining",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "sense_of_place": {
+        "value": 85,
+        "status": "healthy",
+        "trend": "improving",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "clean_waters": {
+        "value": 59,
+        "status": "critical",
+        "trend": "declining",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      },
+      "biodiversity": {
+        "value": 67,
+        "status": "warning",
+        "trend": "declining",
+        "lastUpdated": "2025-09-23T10:00:00Z"
+      }
+    },
+    "location": {
+      "name": "Western Indian Ocean",
+      "coordinates": [12.3, 74.8],
+      "region": "Arabian Sea"
+    }
+  },
+  "water_quality": [
+    {
+      "dissolved_oxygen": {
+        "value": 7.2,
+        "unit": "mg/L",
+        "status": "healthy",
+        "optimal_range": [6.0, 8.0]
+      },
+      "ph_level": {
+        "value": 8.1,
+        "unit": "pH",
+        "status": "healthy",
+        "optimal_range": [7.8, 8.3]
+      },
+      "turbidity": {
+        "value": 2.1,
+        "unit": "NTU",
+        "status": "healthy",
+        "optimal_range": [0, 4.0]
+      },
+      "chlorophyll_a": {
+        "value": 0.8,
+        "unit": "μg/L",
+        "status": "healthy",
+        "optimal_range": [0.1, 2.0]
+      },
+      "nutrients": {
+        "nitrogen": {
+          "value": 0.15,
+          "unit": "mg/L",
+          "status": "healthy"
+        },
+        "phosphorus": {
+          "value": 0.025,
+          "unit": "mg/L",
+          "status": "healthy"
+        },
+        "nitrates": {
+          "value": 0.12,
+          "unit": "mg/L",
+          "status": "healthy"
+        }
+      },
+      "location": {
+        "name": "Mangalore Bay - Station 1",
+        "coordinates": [12.85, 74.88],
+        "depth": 15
+      },
+      "timestamp": "2025-09-23T09:30:00Z"
+    },
+    {
+      "dissolved_oxygen": {
+        "value": 4.8,
+        "unit": "mg/L",
+        "status": "warning",
+        "optimal_range": [6.0, 8.0]
+      },
+      "ph_level": {
+        "value": 7.6,
+        "unit": "pH",
+        "status": "warning",
+        "optimal_range": [7.8, 8.3]
+      },
+      "turbidity": {
+        "value": 6.5,
+        "unit": "NTU",
+        "status": "warning",
+        "optimal_range": [0, 4.0]
+      },
+      "chlorophyll_a": {
+        "value": 3.2,
+        "unit": "μg/L",
+        "status": "warning",
+        "optimal_range": [0.1, 2.0]
+      },
+      "nutrients": {
+        "nitrogen": {
+          "value": 0.35,
+          "unit": "mg/L",
+          "status": "warning"
+        },
+        "phosphorus": {
+          "value": 0.065,
+          "unit": "mg/L",
+          "status": "warning"
+        },
+        "nitrates": {
+          "value": 0.28,
+          "unit": "mg/L",
+          "status": "warning"
+        }
+      },
+      "location": {
+        "name": "Cochin Estuary - Station 2",
+        "coordinates": [9.96, 76.25],
+        "depth": 8
+      },
+      "timestamp": "2025-09-23T09:30:00Z"
+    },
+    {
+      "dissolved_oxygen": {
+        "value": 3.2,
+        "unit": "mg/L",
+        "status": "critical",
+        "optimal_range": [6.0, 8.0]
+      },
+      "ph_level": {
+        "value": 7.2,
+        "unit": "pH",
+        "status": "critical",
+        "optimal_range": [7.8, 8.3]
+      },
+      "turbidity": {
+        "value": 12.8,
+        "unit": "NTU",
+        "status": "critical",
+        "optimal_range": [0, 4.0]
+      },
+      "chlorophyll_a": {
+        "value": 5.8,
+        "unit": "μg/L",
+        "status": "critical",
+        "optimal_range": [0.1, 2.0]
+      },
+      "nutrients": {
+        "nitrogen": {
+          "value": 0.85,
+          "unit": "mg/L",
+          "status": "critical"
+        },
+        "phosphorus": {
+          "value": 0.15,
+          "unit": "mg/L",
+          "status": "critical"
+        },
+        "nitrates": {
+          "value": 0.72,
+          "unit": "mg/L",
+          "status": "critical"
+        }
+      },
+      "location": {
+        "name": "Mumbai Harbor - Station 3",
+        "coordinates": [18.92, 72.82],
+        "depth": 12
+      },
+      "timestamp": "2025-09-23T09:30:00Z"
+    }
+  ],
+  "pollution_indicators": [
+    {
+      "microplastics": {
+        "concentration": 156,
+        "unit": "particles/m³",
+        "status": "warning",
+        "size_distribution": {
+          "small": 89,
+          "medium": 52,
+          "large": 15
+        }
+      },
+      "oil_spills": {
+        "detected": false,
+        "severity": "none",
+        "area_affected": 0,
+        "source_identified": false
+      },
+      "chemical_contaminants": {
+        "heavy_metals": {
+          "mercury": {
+            "value": 0.12,
+            "unit": "μg/L",
+            "status": "healthy"
+          },
+          "lead": {
+            "value": 2.8,
+            "unit": "μg/L",
+            "status": "warning"
+          },
+          "cadmium": {
+            "value": 0.05,
+            "unit": "μg/L",
+            "status": "healthy"
+          }
+        },
+        "pesticides": {
+          "detected": true,
+          "concentration": 0.8,
+          "unit": "μg/L",
+          "status": "warning"
+        },
+        "industrial_chemicals": {
+          "detected": false,
+          "types": [],
+          "status": "healthy"
+        }
+      },
+      "location": {
+        "name": "Goa Coast - Station A",
+        "coordinates": [15.49, 73.82]
+      },
+      "timestamp": "2025-09-23T08:45:00Z"
+    },
+    {
+      "microplastics": {
+        "concentration": 428,
+        "unit": "particles/m³",
+        "status": "critical",
+        "size_distribution": {
+          "small": 245,
+          "medium": 142,
+          "large": 41
+        }
+      },
+      "oil_spills": {
+        "detected": true,
+        "severity": "minor",
+        "area_affected": 2.5,
+        "source_identified": true
+      },
+      "chemical_contaminants": {
+        "heavy_metals": {
+          "mercury": {
+            "value": 0.25,
+            "unit": "μg/L",
+            "status": "warning"
+          },
+          "lead": {
+            "value": 8.2,
+            "unit": "μg/L",
+            "status": "critical"
+          },
+          "cadmium": {
+            "value": 0.15,
+            "unit": "μg/L",
+            "status": "warning"
+          }
+        },
+        "pesticides": {
+          "detected": true,
+          "concentration": 2.4,
+          "unit": "μg/L",
+          "status": "critical"
+        },
+        "industrial_chemicals": {
+          "detected": true,
+          "types": ["PCBs", "PAHs"],
+          "status": "critical"
+        }
+      },
+      "location": {
+        "name": "Mumbai Industrial Zone",
+        "coordinates": [19.02, 72.85]
+      },
+      "timestamp": "2025-09-23T08:45:00Z"
+    }
+  ],
+  "ecosystem_stress": [
+    {
+      "coral_bleaching": {
+        "index": 25,
+        "status": "warning",
+        "affected_area_percent": 15,
+        "severity_level": "minor",
+        "temperature_stress": {
+          "current_temp": 29.2,
+          "baseline_temp": 27.8,
+          "degree_heating_weeks": 3.2
+        }
+      },
+      "seagrass_loss": {
+        "coverage_percent": 68,
+        "historical_baseline": 85,
+        "loss_rate_percent": 2.8,
+        "status": "warning",
+        "primary_causes": ["coastal development", "sedimentation", "pollution"]
+      },
+      "fish_mortality": {
+        "events_detected": 2,
+        "species_affected": ["Sardinella longiceps", "Rastrelliger kanagurta"],
+        "estimated_deaths": 1250,
+        "severity": "moderate",
+        "status": "warning",
+        "potential_causes": ["oxygen depletion", "pollution"]
+      },
+      "location": {
+        "name": "Lakshadweep Marine Park",
+        "coordinates": [10.32, 72.78],
+        "ecosystem_type": "coral reef"
+      },
+      "timestamp": "2025-09-23T07:15:00Z"
+    },
+    {
+      "coral_bleaching": {
+        "index": 65,
+        "status": "critical",
+        "affected_area_percent": 45,
+        "severity_level": "severe",
+        "temperature_stress": {
+          "current_temp": 31.8,
+          "baseline_temp": 27.8,
+          "degree_heating_weeks": 8.7
+        }
+      },
+      "seagrass_loss": {
+        "coverage_percent": 32,
+        "historical_baseline": 78,
+        "loss_rate_percent": 5.2,
+        "status": "critical",
+        "primary_causes": ["coastal development", "pollution", "climate change"]
+      },
+      "fish_mortality": {
+        "events_detected": 5,
+        "species_affected": [
+          "Multiple reef species",
+          "Pomacanthus imperator",
+          "Chaetodon collare"
+        ],
+        "estimated_deaths": 8500,
+        "severity": "high",
+        "status": "critical",
+        "potential_causes": [
+          "thermal stress",
+          "coral bleaching",
+          "disease outbreak"
+        ]
+      },
+      "location": {
+        "name": "Gulf of Mannar",
+        "coordinates": [9.28, 79.15],
+        "ecosystem_type": "coral reef and seagrass"
+      },
+      "timestamp": "2025-09-23T07:15:00Z"
+    }
+  ],
+  "last_updated": "2025-09-23T10:00:00Z",
+  "data_sources": [
+    "INCOIS (Indian National Centre for Ocean Information Services)",
+    "ICMAM (Integrated Coastal and Marine Area Management)",
+    "NIOT (National Institute of Ocean Technology)",
+    "CMLRE (Centre for Marine Living Resources and Ecology)",
+    "Satellite Remote Sensing Data",
+    "Field Monitoring Stations"
+  ]
+}
