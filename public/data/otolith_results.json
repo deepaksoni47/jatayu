@@ -1,14 +1,156 @@
 {
-  "ageDistribution": [
-    { "species": "Sardine", "count": 120 },
-    { "species": "Mackerel", "count": 80 },
-    { "species": "Tuna", "count": 50 },
-    { "species": "Anchovy", "count": 95 }
+  "metadata": {
+    "analysis_system": "OtolithNet AI v2.3.1",
+    "processing_date": "2025-09-28T13:20:00Z",
+    "sample_batch": "BAY-2025-0928",
+    "total_specimens": 347,
+    "success_rate": 0.894,
+    "processing_time_seconds": 1847
+  },
+  "age_distribution": [
+    {
+      "species": "Lutjanus argentimaculatus",
+      "common_name": "Mangrove Red Snapper",
+      "count": 89,
+      "confidence": 0.91,
+      "age_groups": {
+        "0-1_years": 23,
+        "1-2_years": 34,
+        "2-3_years": 19,
+        "3-5_years": 10,
+        "5+_years": 3
+      }
+    },
+    {
+      "species": "Rastrelliger kanagurta",
+      "common_name": "Indian Mackerel",
+      "count": 127,
+      "confidence": 0.88,
+      "age_groups": {
+        "0-1_years": 45,
+        "1-2_years": 67,
+        "2-3_years": 12,
+        "3-5_years": 3,
+        "5+_years": 0
+      }
+    },
+    {
+      "species": "Thunnus albacares",
+      "common_name": "Yellowfin Tuna",
+      "count": 34,
+      "confidence": 0.94,
+      "age_groups": {
+        "0-1_years": 0,
+        "1-2_years": 8,
+        "2-3_years": 15,
+        "3-5_years": 9,
+        "5+_years": 2
+      }
+    },
+    {
+      "species": "Stolephorus commersonnii",
+      "common_name": "Commerson's Anchovy",
+      "count": 97,
+      "confidence": 0.86,
+      "age_groups": {
+        "0-1_years": 72,
+        "1-2_years": 23,
+        "2-3_years": 2,
+        "3-5_years": 0,
+        "5+_years": 0
+      }
+    }
   ],
-  "predictions": [
-    { "species": "Sardine", "group": "1–2 years", "accuracy": 92 },
-    { "species": "Mackerel", "group": "2–3 years", "accuracy": 88 },
-    { "species": "Tuna", "group": "3–5 years", "accuracy": 85 }
+  "growth_predictions": [
+    {
+      "species": "Lutjanus argentimaculatus",
+      "group": "1-2 years",
+      "predicted_length_cm": 28.5,
+      "growth_rate_cm_year": 12.3,
+      "accuracy": 92,
+      "sample_size": 34
+    },
+    {
+      "species": "Rastrelliger kanagurta",
+      "group": "0-1 years",
+      "predicted_length_cm": 15.2,
+      "growth_rate_cm_year": 18.7,
+      "accuracy": 88,
+      "sample_size": 67
+    },
+    {
+      "species": "Thunnus albacares",
+      "group": "2-3 years",
+      "predicted_length_cm": 85.4,
+      "growth_rate_cm_year": 35.8,
+      "accuracy": 95,
+      "sample_size": 15
+    },
+    {
+      "species": "Stolephorus commersonnii",
+      "group": "0-1 years",
+      "predicted_length_cm": 8.9,
+      "growth_rate_cm_year": 9.2,
+      "accuracy": 84,
+      "sample_size": 72
+    }
   ],
-  "boxes": [{ "x": 12, "y": 18, "w": 22, "h": 15 }, { "x": 48, "y": 36, "w": 18, "h": 12 }]
+  "detection_boxes": [
+    {
+      "x": 45,
+      "y": 67,
+      "w": 28,
+      "h": 19,
+      "species": "Lutjanus argentimaculatus",
+      "age": 2.3,
+      "confidence": 0.94
+    },
+    {
+      "x": 156,
+      "y": 203,
+      "w": 22,
+      "h": 15,
+      "species": "Rastrelliger kanagurta",
+      "age": 1.1,
+      "confidence": 0.89
+    },
+    {
+      "x": 289,
+      "y": 134,
+      "w": 35,
+      "h": 24,
+      "species": "Thunnus albacares",
+      "age": 3.7,
+      "confidence": 0.96
+    },
+    {
+      "x": 78,
+      "y": 45,
+      "w": 18,
+      "h": 12,
+      "species": "Stolephorus commersonnii",
+      "age": 0.8,
+      "confidence": 0.87
+    }
+  ],
+  "population_insights": {
+    "recruitment_strength": "moderate",
+    "age_structure_health": "good",
+    "overfishing_indicators": {
+      "missing_old_fish": false,
+      "truncated_age_structure": false,
+      "recruitment_overfishing": false
+    },
+    "conservation_recommendations": [
+      "Continue monitoring Yellowfin Tuna recruitment",
+      "Implement size limits for Mangrove Red Snapper",
+      "Monitor Mackerel fishing pressure"
+    ]
+  },
+  "quality_metrics": {
+    "image_quality_score": 8.7,
+    "otolith_clarity": 9.1,
+    "ring_visibility": 8.4,
+    "measurement_precision": 0.97
+  }
 }

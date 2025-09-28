@@ -1,8 +1,65 @@
 [
-  { "timestamp": "Wk-27", "alerts": 1 },
-  { "timestamp": "Wk-28", "alerts": 2 },
-  { "timestamp": "Wk-29", "alerts": 3 },
-  { "timestamp": "Wk-30", "alerts": 2 },
-  { "timestamp": "Wk-31", "alerts": 4 },
-  { "timestamp": "Wk-32", "alerts": 5 }
+  {
+    "timestamp": "Sep 22",
+    "date": "2025-09-22",
+    "alerts": 2,
+    "hab_alerts": 1,
+    "total_affected_area_km2": 78,
+    "max_chlorophyll": 15.8,
+    "peak_severity": "medium"
+  },
+  {
+    "timestamp": "Sep 23",
+    "date": "2025-09-23",
+    "alerts": 3,
+    "hab_alerts": 2,
+    "total_affected_area_km2": 134,
+    "max_chlorophyll": 18.2,
+    "peak_severity": "high"
+  },
+  {
+    "timestamp": "Sep 24",
+    "date": "2025-09-24",
+    "alerts": 1,
+    "hab_alerts": 1,
+    "total_affected_area_km2": 45,
+    "max_chlorophyll": 11.4,
+    "peak_severity": "low"
+  },
+  {
+    "timestamp": "Sep 25",
+    "date": "2025-09-25",
+    "alerts": 4,
+    "hab_alerts": 2,
+    "total_affected_area_km2": 167,
+    "max_chlorophyll": 21.5,
+    "peak_severity": "high"
+  },
+  {
+    "timestamp": "Sep 26",
+    "date": "2025-09-26",
+    "alerts": 3,
+    "hab_alerts": 1,
+    "total_affected_area_km2": 89,
+    "max_chlorophyll": 21.5,
+    "peak_severity": "high"
+  },
+  {
+    "timestamp": "Sep 27",
+    "date": "2025-09-27",
+    "alerts": 2,
+    "hab_alerts": 1,
+    "total_affected_area_km2": 45,
+    "max_chlorophyll": 12.3,
+    "peak_severity": "medium"
+  },
+  {
+    "timestamp": "Sep 28",
+    "date": "2025-09-28",
+    "alerts": 6,
+    "hab_alerts": 1,
+    "total_affected_area_km2": 127,
+    "max_chlorophyll": 18.7,
+    "peak_severity": "high"
+  }
 ]

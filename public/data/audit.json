@@ -1,7 +1,141 @@
 {
-  "events": [
-    { "time": "2025-09-12T08:00:00Z", "user": "ananya@incois.gov", "action": "Viewed HAB alerts dashboard" },
-    { "time": "2025-09-12T08:05:00Z", "user": "rajesh@cmlre.gov", "action": "Downloaded policy report" },
-    { "time": "2025-09-12T08:12:00Z", "user": "meera@fisheries.gov", "action": "Uploaded eDNA dataset sample" }
-  ]
+  "metadata": {
+    "audit_system": "Jatayu Security & Compliance Monitor v1.8.2",
+    "monitoring_period": "last_30_days",
+    "total_events": 15678,
+    "unique_users": 234,
+    "system_availability": 99.7,
+    "security_incidents": 0
+  },
+  "recent_events": [
+    {
+      "timestamp": "2025-09-28T15:45:00Z",
+      "event_id": "AUD-2025-0928-001",
+      "user": "dr.sharma@incois.gov.in",
+      "user_role": "marine_scientist",
+      "action": "Generated comprehensive species trend analysis report",
+      "resource": "marine_species_database",
+      "ip_address": "203.129.45.67",
+      "location": "INCOIS Hyderabad",
+      "risk_level": "low",
+      "data_accessed": "species_population_data",
+      "session_duration_minutes": 45
+    },
+    {
+      "timestamp": "2025-09-28T15:32:00Z",
+      "event_id": "AUD-2025-0928-002",
+      "user": "ananya@cmlre.gov.in",
+      "user_role": "oceanographer",
+      "action": "Updated oceanographic sensor calibration parameters",
+      "resource": "oceanographic_timeseries",
+      "ip_address": "115.96.123.89",
+      "location": "CMLRE Kochi",
+      "risk_level": "medium",
+      "data_modified": "sensor_calibration_coefficients",
+      "session_duration_minutes": 18,
+      "approval_required": true,
+      "approver": "head_oceanography@cmlre.gov.in"
+    },
+    {
+      "timestamp": "2025-09-28T15:15:00Z",
+      "event_id": "AUD-2025-0928-003",
+      "user": "rajesh.kumar@fisheries.kerala.gov.in",
+      "user_role": "fisheries_officer",
+      "action": "Downloaded HAB alert notifications for coastal distribution",
+      "resource": "marine_alerts_system",
+      "ip_address": "117.194.78.45",
+      "location": "Kerala Fisheries Dept",
+      "risk_level": "low",
+      "data_accessed": "hab_alert_details",
+      "session_duration_minutes": 8,
+      "distribution_count": 47
+    },
+    {
+      "timestamp": "2025-09-28T14:58:00Z",
+      "event_id": "AUD-2025-0928-004",
+      "user": "meera.patel@gsi.gov.in",
+      "user_role": "research_coordinator",
+      "action": "Bulk uploaded eDNA sequencing results from Andaman expedition",
+      "resource": "edna_results",
+      "ip_address": "202.87.156.23",
+      "location": "GSI Marine Wing",
+      "risk_level": "low",
+      "data_uploaded": "1247_sequence_records",
+      "session_duration_minutes": 134,
+      "file_size_mb": 89.5,
+      "validation_status": "passed"
+    },
+    {
+      "timestamp": "2025-09-28T14:23:00Z",
+      "event_id": "AUD-2025-0928-005",
+      "user": "admin@jatayu.gov.in",
+      "user_role": "system_administrator",
+      "action": "Performed system backup and integrity verification",
+      "resource": "entire_database",
+      "ip_address": "10.0.1.15",
+      "location": "Primary Data Center",
+      "risk_level": "high",
+      "data_accessed": "complete_system_backup",
+      "session_duration_minutes": 67,
+      "backup_size_gb": 2847.3,
+      "integrity_check": "passed"
+    },
+    {
+      "timestamp": "2025-09-28T13:45:00Z",
+      "event_id": "AUD-2025-0928-006",
+      "user": "priya.nair@niot.res.in",
+      "user_role": "marine_biologist",
+      "action": "Initiated AI correlation analysis for microplastic impact study",
+      "resource": "ai_correlations_trends",
+      "ip_address": "14.192.78.156",
+      "location": "NIOT Chennai",
+      "risk_level": "medium",
+      "computational_resources": "gpu_cluster_4",
+      "estimated_runtime_hours": 12,
+      "priority": "high"
+    }
+  ],
+  "user_activity_summary": {
+    "most_active_users": [
+      {
+        "user": "dr.sharma@incois.gov.in",
+        "sessions": 67,
+        "total_time_hours": 89.5,
+        "primary_activities": ["data_analysis", "report_generation"]
+      },
+      {
+        "user": "ananya@cmlre.gov.in",
+        "sessions": 45,
+        "total_time_hours": 72.3,
+        "primary_activities": ["sensor_management", "oceanographic_monitoring"]
+      },
+      {
+        "user": "meera.patel@gsi.gov.in",
+        "sessions": 38,
+        "total_time_hours": 156.8,
+        "primary_activities": ["data_upload", "quality_control"]
+      }
+    ],
+    "peak_usage_hours": ["10:00-12:00", "14:00-16:00", "20:00-22:00"],
+    "average_session_duration_minutes": 34,
+    "data_download_volume_gb": 456.7,
+    "data_upload_volume_gb": 234.9
+  },
+  "security_metrics": {
+    "failed_login_attempts": 23,
+    "successful_logins": 3456,
+    "suspicious_activity_detected": 0,
+    "security_scans_performed": 144,
+    "vulnerabilities_found": 0,
+    "patches_applied": 3,
+    "compliance_score": 98.7
+  },
+  "system_performance": {
+    "average_response_time_ms": 234,
+    "database_query_performance": 156,
+    "api_success_rate": 99.8,
+    "data_processing_jobs_completed": 2456,
+    "storage_utilization_percent": 78.5,
+    "network_bandwidth_utilization": 65.3
+  }
 }

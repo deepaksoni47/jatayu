@@ -1,0 +1,325 @@
+{
+  "metadata": {
+    "system": "Jatayu Marine Alert System v3.2.1",
+    "last_updated": "2025-09-28T15:45:00Z",
+    "alert_categories": [
+      "environmental",
+      "species_conservation",
+      "pollution",
+      "weather_hazard",
+      "fishing_restriction",
+      "hab_bloom",
+      "ecosystem_change"
+    ],
+    "severity_levels": {
+      "low": { "value": 1, "color": "#22c55e", "response_time": "72h" },
+      "moderate": { "value": 2, "color": "#eab308", "response_time": "24h" },
+      "high": { "value": 3, "color": "#f97316", "response_time": "6h" },
+      "critical": {
+        "value": 4,
+        "color": "#ef4444",
+        "response_time": "immediate"
+      }
+    }
+  },
+  "active_alerts": [
+    {
+      "alert_id": "ALT-2025-0928-001",
+      "timestamp": "2025-09-28T14:30:00Z",
+      "category": "hab_bloom",
+      "severity": "high",
+      "title": "Harmful Algal Bloom Detected - Kerala Coast",
+      "description": "Satellite imagery and water sampling confirm significant algal bloom development along Kerala coastline. Elevated chlorophyll-a levels (>15 μg/L) detected.",
+      "location": {
+        "region": "Kerala Coast",
+        "coordinates": { "lat": 9.9312, "lng": 76.2673 },
+        "affected_area_km2": 127,
+        "water_bodies": ["Vembanad Lake", "Coastal Waters", "Backwater Systems"]
+      },
+      "parameters": {
+        "chlorophyll_a": 18.7,
+        "dissolved_oxygen": 3.2,
+        "ph": 9.1,
+        "turbidity": 8.9,
+        "temperature": 29.8
+      },
+      "impact_assessment": {
+        "fisheries": "severe",
+        "tourism": "moderate",
+        "public_health": "moderate",
+        "ecosystem": "high"
+      },
+      "affected_species": ["fish", "crustaceans", "mollusks"],
+      "response_actions": [
+        "issue_fishing_ban",
+        "monitor_water_quality",
+        "alert_coastal_communities",
+        "coordinate_cleanup_efforts"
+      ],
+      "responsible_agencies": [
+        "Kerala Coastal Authority",
+        "Marine Research Institute"
+      ],
+      "estimated_duration": "5-7 days",
+      "status": "active",
+      "escalation_needed": false
+    },
+    {
+      "alert_id": "ALT-2025-0927-002",
+      "timestamp": "2025-09-27T22:15:00Z",
+      "category": "species_conservation",
+      "severity": "critical",
+      "title": "Olive Ridley Turtle Mass Nesting Disruption",
+      "description": "Unprecedented human activity disrupting mass nesting event at Rushikulya Beach, Odisha. Immediate intervention required.",
+      "location": {
+        "region": "Rushikulya Beach, Odisha",
+        "coordinates": { "lat": 19.3176, "lng": 84.8642 },
+        "affected_area_km2": 8.5,
+        "water_bodies": ["Bay of Bengal Coast"]
+      },
+      "parameters": {
+        "turtle_count": 12000,
+        "nesting_success_rate": 0.34,
+        "human_interference_incidents": 47
+      },
+      "impact_assessment": {
+        "species_survival": "critical",
+        "breeding_success": "severe",
+        "ecosystem": "high"
+      },
+      "affected_species": ["Lepidochelys olivacea"],
+      "response_actions": [
+        "emergency_beach_closure",
+        "deploy_conservation_teams",
+        "coordinate_with_coast_guard",
+        "public_awareness_campaign"
+      ],
+      "responsible_agencies": [
+        "Forest Department Odisha",
+        "Wildlife Conservation Trust"
+      ],
+      "estimated_duration": "ongoing - 3 weeks",
+      "status": "active",
+      "escalation_needed": true
+    },
+    {
+      "alert_id": "ALT-2025-0926-003",
+      "timestamp": "2025-09-26T08:45:00Z",
+      "category": "pollution",
+      "severity": "moderate",
+      "title": "Microplastic Concentration Spike - Mumbai Harbor",
+      "description": "Routine monitoring detected 3x normal microplastic levels in Mumbai Harbor waters. Source investigation underway.",
+      "location": {
+        "region": "Mumbai Harbor",
+        "coordinates": { "lat": 18.922, "lng": 72.8347 },
+        "affected_area_km2": 42,
+        "water_bodies": ["Mumbai Harbor", "Mahim Bay"]
+      },
+      "parameters": {
+        "microplastic_count_per_liter": 1847,
+        "baseline_level": 620,
+        "plastic_types": ["PET", "polyethylene", "polystyrene"],
+        "size_range_mm": "0.1-5.0"
+      },
+      "impact_assessment": {
+        "marine_food_chain": "moderate",
+        "commercial_fishing": "low",
+        "public_health": "low"
+      },
+      "affected_species": ["filter_feeders", "zooplankton", "small_fish"],
+      "response_actions": [
+        "source_identification",
+        "increase_monitoring_frequency",
+        "coordinate_waste_management",
+        "industry_notification"
+      ],
+      "responsible_agencies": [
+        "Mumbai Port Authority",
+        "Pollution Control Board"
+      ],
+      "estimated_duration": "2-3 weeks investigation",
+      "status": "under_investigation",
+      "escalation_needed": false
+    },
+    {
+      "alert_id": "ALT-2025-0925-004",
+      "timestamp": "2025-09-25T16:20:00Z",
+      "category": "environmental",
+      "severity": "high",
+      "title": "Ocean Temperature Anomaly - Arabian Sea",
+      "description": "Significant sea surface temperature anomaly (+3.2°C above normal) detected in Arabian Sea. Potential coral bleaching risk.",
+      "location": {
+        "region": "Central Arabian Sea",
+        "coordinates": { "lat": 16.0, "lng": 68.5 },
+        "affected_area_km2": 2840,
+        "water_bodies": ["Arabian Sea Deep Waters"]
+      },
+      "parameters": {
+        "current_temperature": 31.4,
+        "normal_temperature": 28.2,
+        "anomaly_magnitude": 3.2,
+        "duration_days": 12,
+        "depth_affected_m": 25
+      },
+      "impact_assessment": {
+        "coral_reefs": "high",
+        "fish_migration": "moderate",
+        "marine_productivity": "moderate"
+      },
+      "affected_species": ["corals", "reef_fish", "plankton"],
+      "response_actions": [
+        "coral_bleaching_surveys",
+        "temperature_monitoring_intensification",
+        "fishermen_advisory",
+        "research_coordination"
+      ],
+      "responsible_agencies": [
+        "Indian National Centre for Ocean Information",
+        "Coral Research Foundation"
+      ],
+      "estimated_duration": "monitoring ongoing",
+      "status": "monitoring",
+      "escalation_needed": false
+    },
+    {
+      "alert_id": "ALT-2025-0924-005",
+      "timestamp": "2025-09-24T11:30:00Z",
+      "category": "fishing_restriction",
+      "severity": "moderate",
+      "title": "Hilsa Fish Spawning Season Protection",
+      "description": "Annual Hilsa spawning season protection measures activated. Fishing restrictions in place for designated breeding areas.",
+      "location": {
+        "region": "Hooghly River Estuary",
+        "coordinates": { "lat": 22.0, "lng": 88.5 },
+        "affected_area_km2": 156,
+        "water_bodies": ["Hooghly River", "Sundarbans Estuaries"]
+      },
+      "parameters": {
+        "spawning_population_estimate": 45000,
+        "breeding_success_rate": 0.78,
+        "fishing_ban_duration_days": 45
+      },
+      "impact_assessment": {
+        "fish_population": "positive",
+        "local_fishing_economy": "moderate_negative",
+        "ecosystem_health": "positive"
+      },
+      "affected_species": ["Tenualosa ilisha"],
+      "response_actions": [
+        "fishing_ban_enforcement",
+        "alternative_livelihood_support",
+        "spawning_ground_monitoring",
+        "fishermen_compensation"
+      ],
+      "responsible_agencies": [
+        "West Bengal Fisheries Department",
+        "Coast Guard"
+      ],
+      "estimated_duration": "45 days seasonal ban",
+      "status": "active",
+      "escalation_needed": false
+    },
+    {
+      "alert_id": "ALT-2025-0923-006",
+      "timestamp": "2025-09-23T19:45:00Z",
+      "category": "weather_hazard",
+      "severity": "low",
+      "title": "Moderate Swell Conditions - Tamil Nadu Coast",
+      "description": "Moderate to rough sea conditions expected along Tamil Nadu coast. Small craft advisory issued.",
+      "location": {
+        "region": "Tamil Nadu Coast",
+        "coordinates": { "lat": 11.5, "lng": 79.8 },
+        "affected_area_km2": 380,
+        "water_bodies": ["Bay of Bengal Coastal Waters"]
+      },
+      "parameters": {
+        "wave_height_m": 2.8,
+        "wind_speed_kmh": 45,
+        "visibility_km": 3.2,
+        "forecast_duration_hours": 18
+      },
+      "impact_assessment": {
+        "fishing_operations": "moderate",
+        "coastal_tourism": "low",
+        "port_operations": "minimal"
+      },
+      "affected_species": [],
+      "response_actions": [
+        "small_craft_advisory",
+        "fishermen_warning",
+        "port_coordination",
+        "weather_monitoring"
+      ],
+      "responsible_agencies": [
+        "Indian Meteorological Department",
+        "Coast Guard"
+      ],
+      "estimated_duration": "18-24 hours",
+      "status": "advisory",
+      "escalation_needed": false
+    }
+  ],
+  "resolved_alerts": [
+    {
+      "alert_id": "ALT-2025-0920-007",
+      "timestamp": "2025-09-20T09:00:00Z",
+      "resolved_timestamp": "2025-09-24T15:30:00Z",
+      "category": "pollution",
+      "severity": "high",
+      "title": "Oil Spill Cleanup - Kandla Port",
+      "description": "Oil spill from tanker vessel successfully contained and cleaned up.",
+      "resolution_summary": "Complete cleanup achieved. 850L oil recovered. Marine life impact minimal.",
+      "status": "resolved"
+    }
+  ],
+  "alert_statistics": {
+    "last_30_days": {
+      "total_alerts": 23,
+      "by_severity": {
+        "low": 8,
+        "moderate": 9,
+        "high": 5,
+        "critical": 1
+      },
+      "by_category": {
+        "environmental": 7,
+        "species_conservation": 4,
+        "pollution": 6,
+        "weather_hazard": 3,
+        "fishing_restriction": 2,
+        "hab_bloom": 1
+      },
+      "average_resolution_time_hours": 36.5,
+      "escalation_rate": 0.13
+    },
+    "trends": {
+      "increasing_categories": ["hab_bloom", "pollution"],
+      "seasonal_patterns": {
+        "monsoon_related": ["pollution", "weather_hazard"],
+        "breeding_season": ["species_conservation", "fishing_restriction"]
+      }
+    }
+  },
+  "notification_channels": [
+    {
+      "channel": "sms",
+      "severity_threshold": "high",
+      "subscribers": 1247
+    },
+    {
+      "channel": "email",
+      "severity_threshold": "moderate",
+      "subscribers": 3891
+    },
+    {
+      "channel": "mobile_app",
+      "severity_threshold": "low",
+      "subscribers": 5623
+    },
+    {
+      "channel": "radio_broadcast",
+      "severity_threshold": "critical",
+      "coverage_areas": ["coastal_regions", "fishing_communities"]
+    }
+  ]
+}

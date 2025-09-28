@@ -1,0 +1,339 @@
+{
+  "metadata": {
+    "ai_system": "Jatayu Marine Intelligence Platform v4.1.2",
+    "analysis_engine": "DeepOcean Neural Network",
+    "last_model_update": "2025-09-28T08:00:00Z",
+    "data_sources": [
+      "satellite_imagery",
+      "sensor_networks",
+      "species_observations",
+      "environmental_parameters",
+      "fishing_data",
+      "climate_models"
+    ],
+    "confidence_threshold": 0.75
+  },
+  "pattern_detection": {
+    "recent_correlations": [
+      {
+        "correlation_id": "CORR-2025-0928-001",
+        "discovered": "2025-09-28T12:15:00Z",
+        "type": "environmental_species",
+        "title": "Temperature Anomalies Linked to Whale Shark Migration",
+        "description": "AI detected strong correlation (r=0.89) between Arabian Sea temperature spikes and whale shark movement patterns",
+        "parameters": {
+          "primary": {
+            "name": "sea_surface_temperature",
+            "data_source": "satellite_thermal",
+            "correlation_strength": 0.89
+          },
+          "secondary": {
+            "name": "whale_shark_sightings",
+            "data_source": "citizen_science_reports",
+            "correlation_strength": 0.89
+          }
+        },
+        "statistical_significance": 0.0001,
+        "confidence": 0.91,
+        "implications": [
+          "Climate change affecting megafauna behavior",
+          "Need for dynamic marine protected areas",
+          "Tourism industry planning opportunities"
+        ],
+        "location": {
+          "region": "Arabian Sea",
+          "coordinates": { "lat": 16.5, "lng": 68.0 },
+          "area_km2": 15000
+        },
+        "validation_status": "peer_review_pending",
+        "impact_score": 8.7
+      },
+      {
+        "correlation_id": "CORR-2025-0925-002",
+        "discovered": "2025-09-25T14:30:00Z",
+        "type": "pollution_biodiversity",
+        "title": "Microplastic Concentration Predicts Species Diversity Decline",
+        "description": "Machine learning model identifies microplastic levels as primary predictor of local biodiversity loss",
+        "parameters": {
+          "primary": {
+            "name": "microplastic_density",
+            "data_source": "water_sampling",
+            "correlation_strength": -0.84
+          },
+          "secondary": {
+            "name": "species_richness_index",
+            "data_source": "biodiversity_surveys",
+            "correlation_strength": -0.84
+          }
+        },
+        "statistical_significance": 0.0023,
+        "confidence": 0.87,
+        "implications": [
+          "Microplastics major biodiversity threat",
+          "Early warning system for ecosystem collapse",
+          "Policy intervention priorities"
+        ],
+        "location": {
+          "region": "Mumbai Harbor Complex",
+          "coordinates": { "lat": 18.95, "lng": 72.85 },
+          "area_km2": 250
+        },
+        "validation_status": "validated",
+        "impact_score": 9.2
+      },
+      {
+        "correlation_id": "CORR-2025-0922-003",
+        "discovered": "2025-09-22T09:45:00Z",
+        "type": "seasonal_ecosystem",
+        "title": "Monsoon Intensity Affects Coral Recruitment Success",
+        "description": "Multi-year analysis reveals monsoon precipitation patterns strongly influence coral larval settlement rates",
+        "parameters": {
+          "primary": {
+            "name": "monsoon_precipitation_intensity",
+            "data_source": "meteorological_stations",
+            "correlation_strength": 0.76
+          },
+          "secondary": {
+            "name": "coral_recruitment_rate",
+            "data_source": "reef_monitoring_surveys",
+            "correlation_strength": 0.76
+          }
+        },
+        "statistical_significance": 0.0089,
+        "confidence": 0.83,
+        "implications": [
+          "Climate change threatens coral reproduction",
+          "Freshwater-salinity balance critical",
+          "Restoration timing optimization"
+        ],
+        "location": {
+          "region": "Gulf of Mannar",
+          "coordinates": { "lat": 9.15, "lng": 79.15 },
+          "area_km2": 560
+        },
+        "validation_status": "validated",
+        "impact_score": 7.9
+      }
+    ],
+    "trending_patterns": [
+      {
+        "pattern_id": "TREND-2025-001",
+        "title": "Accelerating Northward Species Migration",
+        "description": "Tropical marine species showing consistent 2.3km/year northward distribution shift",
+        "trend_strength": "strong",
+        "detection_date": "2025-09-20T00:00:00Z",
+        "confidence": 0.92,
+        "affected_species_count": 34,
+        "migration_rate_km_per_year": 2.3,
+        "driver": "ocean_warming"
+      },
+      {
+        "pattern_id": "TREND-2025-002",
+        "title": "Declining Deep-Sea Oxygen Levels",
+        "description": "Consistent oxygen depletion trend in depths >500m across monitoring stations",
+        "trend_strength": "moderate",
+        "detection_date": "2025-09-18T00:00:00Z",
+        "confidence": 0.88,
+        "oxygen_decline_rate_percent_per_year": 1.8,
+        "affected_depth_range": "500-2000m",
+        "driver": "climate_change"
+      },
+      {
+        "pattern_id": "TREND-2025-003",
+        "title": "Increasing Harmful Algal Bloom Frequency",
+        "description": "HAB events increasing 15% annually in coastal waters",
+        "trend_strength": "strong",
+        "detection_date": "2025-09-15T00:00:00Z",
+        "confidence": 0.86,
+        "increase_rate_percent_per_year": 15.2,
+        "affected_areas": ["Kerala Coast", "Tamil Nadu Coast", "Andhra Coast"],
+        "driver": "nutrient_pollution"
+      }
+    ]
+  },
+  "predictive_models": {
+    "species_distribution": {
+      "model_name": "BioClim-Marine v3.2",
+      "accuracy": 0.847,
+      "last_training": "2025-09-15T00:00:00Z",
+      "predictions": [
+        {
+          "species": "Lutjanus argentimaculatus",
+          "current_habitat_suitability": 0.72,
+          "predicted_2030_suitability": 0.58,
+          "change_direction": "declining",
+          "confidence": 0.84,
+          "key_factors": [
+            "temperature_increase",
+            "salinity_changes",
+            "habitat_loss"
+          ]
+        },
+        {
+          "species": "Rhincodon typus",
+          "current_habitat_suitability": 0.81,
+          "predicted_2030_suitability": 0.69,
+          "change_direction": "declining",
+          "confidence": 0.91,
+          "key_factors": [
+            "food_availability",
+            "shipping_traffic",
+            "temperature_changes"
+          ]
+        }
+      ]
+    },
+    "environmental_forecasting": {
+      "model_name": "OceanClim-Predict v2.8",
+      "accuracy": 0.792,
+      "forecast_horizon_days": 30,
+      "predictions": [
+        {
+          "parameter": "sea_surface_temperature",
+          "current_value": 28.5,
+          "predicted_30day": 29.2,
+          "trend": "increasing",
+          "confidence": 0.89,
+          "anomaly_probability": 0.23
+        },
+        {
+          "parameter": "chlorophyll_concentration",
+          "current_value": 1.2,
+          "predicted_30day": 2.1,
+          "trend": "increasing",
+          "confidence": 0.76,
+          "anomaly_probability": 0.41
+        }
+      ]
+    }
+  },
+  "anomaly_detection": {
+    "active_anomalies": [
+      {
+        "anomaly_id": "ANOM-2025-0928-001",
+        "detected": "2025-09-28T11:20:00Z",
+        "type": "temperature_spike",
+        "severity": "moderate",
+        "location": {
+          "station": "ARA_01",
+          "coordinates": { "lat": 16.8409, "lng": 69.6293 }
+        },
+        "parameter": "temperature",
+        "normal_range": "26.2-27.8°C",
+        "detected_value": "29.4°C",
+        "anomaly_score": 3.7,
+        "confidence": 0.91,
+        "potential_causes": [
+          "local_weather_event",
+          "equipment_calibration",
+          "upwelling_disruption"
+        ],
+        "recommended_actions": [
+          "increase_monitoring_frequency",
+          "investigate_local_conditions",
+          "alert_research_teams"
+        ]
+      },
+      {
+        "anomaly_id": "ANOM-2025-0927-002",
+        "detected": "2025-09-27T16:45:00Z",
+        "type": "species_absence",
+        "severity": "high",
+        "location": {
+          "region": "Bay of Bengal Coastal",
+          "coordinates": { "lat": 15.3173, "lng": 80.1514 }
+        },
+        "parameter": "fish_abundance",
+        "normal_range": "120-180 individuals/survey",
+        "detected_value": "23 individuals/survey",
+        "anomaly_score": 7.2,
+        "confidence": 0.88,
+        "potential_causes": [
+          "overfishing",
+          "habitat_degradation",
+          "seasonal_migration",
+          "environmental_stress"
+        ],
+        "recommended_actions": [
+          "emergency_survey",
+          "fishing_activity_review",
+          "habitat_assessment"
+        ]
+      }
+    ],
+    "anomaly_statistics": {
+      "last_30_days": {
+        "total_anomalies": 47,
+        "confirmed_anomalies": 31,
+        "false_positives": 16,
+        "detection_accuracy": 0.66,
+        "average_resolution_time_hours": 18.3
+      }
+    }
+  },
+  "ai_insights": {
+    "ecosystem_health_score": {
+      "overall_score": 6.8,
+      "scale": "0-10 (10=excellent)",
+      "last_updated": "2025-09-28T15:00:00Z",
+      "components": {
+        "water_quality": 7.2,
+        "biodiversity": 6.1,
+        "habitat_integrity": 6.9,
+        "pollution_levels": 6.5,
+        "climate_resilience": 7.1
+      },
+      "trend": "slowly_declining",
+      "confidence": 0.84
+    },
+    "risk_assessment": {
+      "high_risk_areas": [
+        {
+          "area": "Mumbai Harbor Complex",
+          "risk_score": 8.7,
+          "primary_threats": ["pollution", "habitat_loss", "overfishing"],
+          "species_at_risk": 23
+        },
+        {
+          "area": "Sundarbans Estuary",
+          "risk_score": 7.9,
+          "primary_threats": [
+            "climate_change",
+            "salinity_intrusion",
+            "development"
+          ],
+          "species_at_risk": 18
+        }
+      ],
+      "emerging_threats": [
+        {
+          "threat": "ocean_acidification",
+          "severity": "high",
+          "confidence": 0.89,
+          "timeframe": "5-10 years",
+          "affected_ecosystems": ["coral_reefs", "shellfish_habitats"]
+        }
+      ]
+    }
+  },
+  "model_performance": {
+    "accuracy_metrics": {
+      "species_prediction": 0.847,
+      "environmental_forecast": 0.792,
+      "anomaly_detection": 0.659,
+      "correlation_identification": 0.891
+    },
+    "data_quality_scores": {
+      "satellite_data": 0.92,
+      "sensor_networks": 0.87,
+      "survey_data": 0.76,
+      "citizen_science": 0.64
+    },
+    "training_data_size": {
+      "environmental_records": 2845000,
+      "species_observations": 456000,
+      "satellite_images": 89000,
+      "sensor_readings": 15600000
+    }
+  }
+}

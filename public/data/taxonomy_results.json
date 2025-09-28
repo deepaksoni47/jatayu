@@ -1,16 +1,171 @@
 {
-  "confidence": [
-    { "label": "Genus", "score": 0.86 },
-    { "label": "Species", "score": 0.78 },
-    { "label": "Family", "score": 0.9 },
-    { "label": "Order", "score": 0.83 },
-    { "label": "Class", "score": 0.88 }
+  "metadata": {
+    "classification_system": "TaxonomyNet AI v4.2.1",
+    "reference_database": "WoRMS + FishBase + BOLD Systems",
+    "analysis_date": "2025-09-28T10:15:00Z",
+    "total_specimens_processed": 2847,
+    "automated_classifications": 2654,
+    "manual_verification_required": 193,
+    "processing_time_hours": 18.7
+  },
+  "taxonomic_confidence_scores": [
+    {
+      "level": "Kingdom",
+      "score": 0.98,
+      "total_assignments": 2847,
+      "high_confidence": 2836,
+      "medium_confidence": 11,
+      "low_confidence": 0
+    },
+    {
+      "level": "Phylum",
+      "score": 0.96,
+      "total_assignments": 2847,
+      "high_confidence": 2798,
+      "medium_confidence": 46,
+      "low_confidence": 3
+    },
+    {
+      "level": "Class",
+      "score": 0.93,
+      "total_assignments": 2847,
+      "high_confidence": 2712,
+      "medium_confidence": 118,
+      "low_confidence": 17
+    },
+    {
+      "level": "Order",
+      "score": 0.88,
+      "total_assignments": 2847,
+      "high_confidence": 2589,
+      "medium_confidence": 201,
+      "low_confidence": 57
+    },
+    {
+      "level": "Family",
+      "score": 0.84,
+      "total_assignments": 2847,
+      "high_confidence": 2456,
+      "medium_confidence": 298,
+      "low_confidence": 93
+    },
+    {
+      "level": "Genus",
+      "score": 0.79,
+      "total_assignments": 2847,
+      "high_confidence": 2234,
+      "medium_confidence": 421,
+      "low_confidence": 192
+    },
+    {
+      "level": "Species",
+      "score": 0.72,
+      "total_assignments": 2847,
+      "high_confidence": 1945,
+      "medium_confidence": 612,
+      "low_confidence": 290
+    }
   ],
-  "heatmap": [
-    [0.2, 0.4, 0.6, 0.5, 0.3],
-    [0.5, 0.7, 0.8, 0.6, 0.4],
-    [0.3, 0.5, 0.7, 0.4, 0.2],
-    [0.4, 0.6, 0.5, 0.3, 0.1],
-    [0.2, 0.4, 0.3, 0.2, 0.1]
-  ]
+  "classification_heatmap": [
+    [0.98, 0.96, 0.93, 0.88, 0.84, 0.79, 0.72],
+    [0.95, 0.94, 0.91, 0.86, 0.82, 0.77, 0.69],
+    [0.97, 0.95, 0.92, 0.87, 0.83, 0.78, 0.71],
+    [0.96, 0.94, 0.9, 0.85, 0.81, 0.76, 0.68],
+    [0.94, 0.92, 0.89, 0.84, 0.8, 0.74, 0.66],
+    [0.93, 0.91, 0.87, 0.82, 0.78, 0.72, 0.64],
+    [0.91, 0.89, 0.85, 0.8, 0.76, 0.7, 0.62]
+  ],
+  "taxonomic_distribution": {
+    "by_class": [
+      {
+        "class": "Actinopterygii",
+        "common_name": "Ray-finned Fish",
+        "count": 2156,
+        "percentage": 75.7,
+        "confidence": 0.91
+      },
+      {
+        "class": "Chondrichthyes",
+        "common_name": "Cartilaginous Fish",
+        "count": 289,
+        "percentage": 10.1,
+        "confidence": 0.88
+      },
+      {
+        "class": "Malacostraca",
+        "common_name": "Crustaceans",
+        "count": 234,
+        "percentage": 8.2,
+        "confidence": 0.84
+      },
+      {
+        "class": "Gastropoda",
+        "common_name": "Gastropods",
+        "count": 98,
+        "percentage": 3.4,
+        "confidence": 0.79
+      },
+      {
+        "class": "Anthozoa",
+        "common_name": "Corals & Sea Anemones",
+        "count": 70,
+        "percentage": 2.5,
+        "confidence": 0.76
+      }
+    ],
+    "by_habitat": [
+      {
+        "habitat": "Coastal Waters",
+        "species_count": 1456,
+        "dominant_families": ["Lutjanidae", "Serranidae", "Gobiidae"]
+      },
+      {
+        "habitat": "Deep Sea",
+        "species_count": 623,
+        "dominant_families": ["Myctophidae", "Stomiidae", "Macrouridae"]
+      },
+      {
+        "habitat": "Estuarine",
+        "species_count": 543,
+        "dominant_families": ["Mugilidae", "Ambassidae", "Engraulidae"]
+      },
+      {
+        "habitat": "Coral Reefs",
+        "species_count": 225,
+        "dominant_families": ["Pomacentridae", "Labridae", "Chaetodontidae"]
+      }
+    ]
+  },
+  "novel_discoveries": [
+    {
+      "provisional_name": "Hippocampus bengalensis sp. nov.",
+      "confidence": 0.89,
+      "morphological_features": "Distinct coronet pattern, 11 trunk rings",
+      "genetic_distance": 0.12,
+      "location": "Sundarbans Mangroves",
+      "status": "pending_formal_description"
+    },
+    {
+      "provisional_name": "Cryptocentrus sp. cf. inexplicatus",
+      "confidence": 0.76,
+      "morphological_features": "Unique caudal fin pattern",
+      "genetic_distance": 0.08,
+      "location": "Andaman Sea",
+      "status": "under_investigation"
+    }
+  ],
+  "quality_assessment": {
+    "image_quality_average": 8.4,
+    "morphological_clarity": 8.7,
+    "genetic_sequence_quality": 9.1,
+    "expert_validation_rate": 0.87,
+    "database_coverage": 0.94,
+    "regional_representation": 0.82
+  },
+  "temporal_trends": {
+    "new_species_rate_per_month": 2.3,
+    "reclassification_rate": 0.04,
+    "confidence_improvement_rate": 0.12,
+    "database_growth_rate": 1.8
+  }
 }

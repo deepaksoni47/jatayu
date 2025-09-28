@@ -1,71 +1,85 @@
-"use client"
-import AppShell from "@/components/layout/app-shell"
-import type React from "react"
+"use client";
+import AppShell from "@/components/layout/app-shell";
+import type React from "react";
 
-import useSWR from "swr"
-import { useMemo, useState, useEffect } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import useSWR from "swr";
+import { useMemo, useState, useEffect } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json())
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function IngestionPage() {
-  const { data: preview } = useSWR("/data/sample_ingested.json", fetcher)
-  const { data: schema } = useSWR("/data/schema_map.json", fetcher)
-  const [filter, setFilter] = useState<"All" | "Oceanography" | "Fisheries" | "eDNA">("All")
-  const [uploadPreview, setUploadPreview] = useState<any[] | null>(null)
-  const [progress, setProgress] = useState(0)
+  const { data: preview } = useSWR("/data/sample_ingested.json", fetcher);
+  const { data: schema } = useSWR("/data/schema_map.json", fetcher);
+  const [filter, setFilter] = useState<
+    "All" | "Oceanography" | "Fisheries" | "eDNA"
+  >("All");
+  const [uploadPreview, setUploadPreview] = useState<any[] | null>(null);
+  const [progress, setProgress] = useState(0);
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  // auto-progress to simulate standardization
-  useEffect(() => {
-    setProgress(0)
+  // Function to start processing when file is uploaded
+  const startProcessing = () => {
+    setIsProcessing(true);
+    setProgress(0);
     const id = setInterval(() => {
       setProgress((p) => {
-        const next = Math.min(100, p + 7)
-        if (next >= 100) clearInterval(id)
-        return next
-      })
-    }, 300)
-    return () => clearInterval(id)
-  }, [filter, uploadPreview])
+        const next = Math.min(100, p + 7);
+        if (next >= 100) {
+          clearInterval(id);
+          setIsProcessing(false);
+        }
+        return next;
+      });
+    }, 300);
+  };
 
   const dataRows = useMemo(() => {
-    const rows = uploadPreview ?? preview ?? []
-    if (filter === "All") return rows
-    return rows.filter((r: any) => r.domain === filter)
-  }, [filter, preview, uploadPreview])
+    const rows = uploadPreview ?? preview ?? [];
+    if (filter === "All") return rows;
+    return rows.filter((r: any) => r.domain === filter);
+  }, [filter, preview, uploadPreview]);
 
   function onUpload(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    if (!file) return
-    const reader = new FileReader()
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
     reader.onload = () => {
       try {
-        const text = reader.result as string
+        const text = reader.result as string;
         if (file.name.endsWith(".json")) {
-          const j = JSON.parse(text)
-          setUploadPreview(Array.isArray(j) ? j.slice(0, 10) : [j])
+          const j = JSON.parse(text);
+          setUploadPreview(Array.isArray(j) ? j.slice(0, 10) : [j]);
+          startProcessing(); // Start processing when file is uploaded
         } else {
           // CSV parse (very naive)
-          const [headerLine, ...lines] = text.split(/\r?\n/).filter(Boolean)
-          const headers = headerLine.split(",")
+          const [headerLine, ...lines] = text.split(/\r?\n/).filter(Boolean);
+          const headers = headerLine.split(",");
           const rows = lines.slice(0, 10).map((line) => {
-            const cells = line.split(",")
-            const obj: any = {}
-            headers.forEach((h, i) => (obj[h.trim()] = cells[i]?.trim()))
-            return obj
-          })
-          setUploadPreview(rows)
+            const cells = line.split(",");
+            const obj: any = {};
+            headers.forEach((h, i) => (obj[h.trim()] = cells[i]?.trim()));
+            return obj;
+          });
+          setUploadPreview(rows);
+          startProcessing(); // Start processing when file is uploaded
         }
       } catch {
-        setUploadPreview(null)
+        setUploadPreview(null);
       }
-    }
-    reader.readAsText(file)
+    };
+    reader.readAsText(file);
   }
 
   return (
@@ -79,11 +93,19 @@ export default function IngestionPage() {
             <div className="flex items-end gap-3">
               <div className="grid gap-1">
                 <Label htmlFor="file">CSV/JSON</Label>
-                <Input id="file" type="file" accept=".csv,.json" onChange={onUpload} />
+                <Input
+                  id="file"
+                  type="file"
+                  accept=".csv,.json"
+                  onChange={onUpload}
+                />
               </div>
               <div className="grid gap-1">
                 <Label>Filter Domain</Label>
-                <Select value={filter} onValueChange={(v) => setFilter(v as any)}>
+                <Select
+                  value={filter}
+                  onValueChange={(v) => setFilter(v as any)}
+                >
                   <SelectTrigger className="w-44">
                     <SelectValue />
                   </SelectTrigger>
@@ -95,15 +117,31 @@ export default function IngestionPage() {
                   </SelectContent>
                 </Select>
               </div>
-              <Button className="ml-auto" variant="secondary" onClick={() => setUploadPreview(null)}>
+              <Button
+                className="ml-auto"
+                variant="secondary"
+                onClick={() => setUploadPreview(null)}
+              >
                 Reset
               </Button>
             </div>
             <div className="mt-4">
-              <div className="text-sm text-muted-foreground mb-2">Cleaning & Standardization</div>
+              <div className="text-sm text-muted-foreground mb-2">
+                Data Processing Status
+              </div>
               <Progress value={progress} />
               <div className="text-xs text-muted-foreground mt-1">
-                {progress < 100 ? "Standardizing..." : "Data Standardized → Success"}
+                {!uploadPreview &&
+                  progress === 0 &&
+                  "Upload a file to start processing"}
+                {isProcessing && "Processing and standardizing data..."}
+                {progress === 100 &&
+                  uploadPreview &&
+                  "Data processed successfully"}
+                {uploadPreview &&
+                  !isProcessing &&
+                  progress < 100 &&
+                  "Ready for processing"}
               </div>
             </div>
             <div className="mt-4 overflow-auto border rounded-md">
@@ -129,7 +167,9 @@ export default function IngestionPage() {
                   ))}
                   {dataRows.length === 0 && (
                     <tr>
-                      <td className="p-3 text-muted-foreground">No rows to display</td>
+                      <td className="p-3 text-muted-foreground">
+                        No rows to display
+                      </td>
                     </tr>
                   )}
                 </tbody>
@@ -149,5 +189,5 @@ export default function IngestionPage() {
         </Card>
       </div>
     </AppShell>
-  )
+  );
 }

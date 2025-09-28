@@ -30,6 +30,16 @@ const COLORS = [
   "var(--chart-5)",
 ];
 
+// Better colors for conservation status pie chart
+const CONSERVATION_COLORS = [
+  "#22c55e", // Green for Least Concern
+  "#eab308", // Yellow for Near Threatened
+  "#f97316", // Orange for Vulnerable
+  "#ef4444", // Red for Endangered
+  "#7c2d12", // Dark red for Critically Endangered
+  "#6b7280", // Gray for Data Deficient
+];
+
 // Memoized chart components to prevent unnecessary re-renders
 const SpeciesTrendChart = memo(({ trend }: { trend: any[] }) => (
   <ResponsiveContainer width="100%" height="100%">
@@ -39,10 +49,19 @@ const SpeciesTrendChart = memo(({ trend }: { trend: any[] }) => (
       <Tooltip />
       <Line
         type="monotone"
-        dataKey="detections"
+        dataKey="temperature"
         stroke="var(--chart-1)"
         strokeWidth={2}
         dot={false}
+        name="Temperature (°C)"
+      />
+      <Line
+        type="monotone"
+        dataKey="salinity"
+        stroke="var(--chart-3)"
+        strokeWidth={2}
+        dot={false}
+        name="Salinity (psu)"
       />
     </LineChart>
   </ResponsiveContainer>
@@ -55,20 +74,42 @@ const SourceDistributionChart = memo(({ dist }: { dist: any[] }) => (
         data={dist || []}
         dataKey="value"
         nameKey="name"
+        cx="50%"
+        cy="50%"
+        innerRadius={45}
         outerRadius={90}
-        label
+        paddingAngle={2}
+        label={({ name, percent }: any) =>
+          `${name}: ${(percent * 100).toFixed(0)}%`
+        }
+        labelLine={false}
       >
         {(dist || []).map((_: any, idx: number) => (
           <Cell
             key={idx}
-            fill={COLORS[idx % COLORS.length]}
-            stroke="var(--card)"
-            strokeWidth={1}
+            fill={CONSERVATION_COLORS[idx % CONSERVATION_COLORS.length]}
+            stroke="var(--background)"
+            strokeWidth={2}
           />
         ))}
       </Pie>
-      <Tooltip />
-      <Legend />
+      <Tooltip
+        formatter={(value: number, name: string) => [`${value} species`, name]}
+        contentStyle={{
+          backgroundColor: "hsl(var(--popover))",
+          border: "1px solid hsl(var(--border))",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+          color: "hsl(var(--popover-foreground))",
+          fontSize: "14px",
+          padding: "12px",
+        }}
+        labelStyle={{
+          color: "hsl(var(--popover-foreground))",
+          fontWeight: "600",
+          marginBottom: "4px",
+        }}
+      />
     </PieChart>
   </ResponsiveContainer>
 ));
@@ -85,27 +126,55 @@ const HabTimelineChart = memo(({ habTimeline }: { habTimeline: any[] }) => (
         stroke="var(--chart-2)"
         fill="var(--chart-2)"
         fillOpacity={0.25}
+        name="Total Alerts"
+      />
+      <Area
+        type="monotone"
+        dataKey="habAlerts"
+        stroke="var(--chart-4)"
+        fill="var(--chart-4)"
+        fillOpacity={0.4}
+        name="HAB Alerts"
       />
     </AreaChart>
   </ResponsiveContainer>
 ));
 
-export default function DashboardPage() {
-  // Reduced refresh interval to 30 seconds instead of 5 seconds
+export default function Dashboard() {
+  // Load realistic datasets
   const { data: summary } = useSWR("/data/dashboard.json", fetcher, {
-    refreshInterval: 30000,
-    revalidateOnFocus: false,
-    dedupingInterval: 10000,
-  });
-  const { data: trend } = useSWR("/data/species_trend.json", fetcher, {
     revalidateOnFocus: false,
   });
-  const { data: dist } = useSWR("/data/source_distribution.json", fetcher, {
-    revalidateOnFocus: false,
-  });
-  const { data: habTimeline } = useSWR("/data/hab_timeline.json", fetcher, {
-    revalidateOnFocus: false,
-  });
+  const { data: oceanData } = useSWR(
+    "/data/oceanographic_timeseries.json",
+    fetcher,
+    {
+      revalidateOnFocus: false,
+    }
+  );
+  const { data: speciesData } = useSWR(
+    "/data/marine_species_database.json",
+    fetcher,
+    {
+      revalidateOnFocus: false,
+    }
+  );
+  const { data: alertsData } = useSWR(
+    "/data/marine_alerts_system.json",
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      refreshInterval: 30000, // Refresh alerts every 30 seconds
+    }
+  );
+  const { data: aiData } = useSWR(
+    "/data/ai_correlations_trends.json",
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      refreshInterval: 60000, // Refresh AI insights every minute
+    }
+  );
   const { data: discoveries } = useSWR(
     "/data/recent_discoveries.json",
     fetcher,
@@ -115,24 +184,105 @@ export default function DashboardPage() {
     }
   );
 
-  const anomalies = useMemo(
-    () => summary?.anomalies ?? [],
-    [summary?.anomalies]
-  );
+  // Process data for dashboard cards
+  const cards = useMemo(() => {
+    const activeAlerts = alertsData?.active_alerts?.length ?? 0;
+    const totalSpecies = speciesData?.metadata?.total_species ?? 0;
+    const runningJobs = aiData?.model_performance?.training_data_size
+      ? Object.keys(aiData.model_performance.training_data_size).length
+      : 0;
+    const stationsOnline = oceanData?.metadata?.stations?.length ?? 0;
 
-  const cards = useMemo(
-    () => [
-      { label: "Datasets Ingested", value: summary?.datasets ?? 0 },
-      { label: "Species Detected", value: summary?.species ?? 0 },
+    return [
+      { label: "Monitoring Stations", value: stationsOnline },
+      { label: "Species Catalogued", value: totalSpecies },
       {
         label: "Active Alerts",
-        value: summary?.alerts ?? 0,
-        tone: "destructive" as const,
+        value: activeAlerts,
+        tone: activeAlerts > 3 ? ("destructive" as const) : undefined,
       },
-      { label: "Running AI Jobs", value: summary?.jobs ?? 0 },
-    ],
-    [summary]
-  );
+      { label: "AI Models Running", value: runningJobs },
+    ];
+  }, [oceanData, speciesData, alertsData, aiData]);
+
+  // Process oceanographic time series for trend chart
+  const temperatureTrend = useMemo(() => {
+    if (!oceanData?.timeseries_data) return [];
+
+    return oceanData.timeseries_data
+      .filter((d: any) => d.station_id === "BAY_01") // Focus on one station
+      .map((d: any) => ({
+        date: new Date(d.timestamp).toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+        }),
+        temperature: d.measurements.temperature,
+        salinity: d.measurements.salinity,
+        ph: d.measurements.ph,
+        oxygen: d.measurements.dissolved_oxygen,
+      }))
+      .reverse(); // Latest first
+  }, [oceanData]);
+
+  // Process species conservation status for pie chart
+  const conservationData = useMemo(() => {
+    if (!speciesData?.species_categories?.conservation_status) return [];
+
+    return speciesData.species_categories.conservation_status.map(
+      (status: any) => ({
+        name: status.name,
+        value: status.count,
+        color: status.color,
+      })
+    );
+  }, [speciesData]);
+
+  // Process AI anomalies for notifications
+  const anomalies = useMemo(() => {
+    if (!aiData?.anomaly_detection?.active_anomalies) return [];
+
+    return aiData.anomaly_detection.active_anomalies.map((anomaly: any) => ({
+      title: anomaly.type
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, (l: string) => l.toUpperCase()),
+      time: new Date(anomaly.detected).toLocaleString(),
+      detail: `${anomaly.parameter}: ${anomaly.detected_value} (Normal: ${anomaly.normal_range})`,
+    }));
+  }, [aiData]);
+
+  // Process HAB alerts timeline
+  const habTimelineData = useMemo(() => {
+    if (!alertsData?.active_alerts) return [];
+
+    // Create timeline from last 7 days with alert counts
+    const days = [];
+    for (let i = 6; i >= 0; i--) {
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      const dayStart = new Date(date.setHours(0, 0, 0, 0));
+      const dayEnd = new Date(date.setHours(23, 59, 59, 999));
+
+      const dayAlerts = alertsData.active_alerts.filter((alert: any) => {
+        const alertDate = new Date(alert.timestamp);
+        return alertDate >= dayStart && alertDate <= dayEnd;
+      }).length;
+
+      days.push({
+        timestamp: dayStart.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+        }),
+        alerts: dayAlerts,
+        habAlerts: alertsData.active_alerts.filter(
+          (alert: any) =>
+            alert.category === "hab_bloom" &&
+            new Date(alert.timestamp) >= dayStart &&
+            new Date(alert.timestamp) <= dayEnd
+        ).length,
+      });
+    }
+    return days;
+  }, [alertsData]);
 
   return (
     <AppShell>
@@ -176,21 +326,21 @@ export default function DashboardPage() {
         })}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
         <Card
           variant="glass"
           hover="glow"
-          className="lg:col-span-2 card-shimmer animate-fade-slide-in"
+          className="card-shimmer animate-fade-slide-in"
           style={{ animationDelay: "400ms" }}
         >
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              Species Detection Trend
+              Oceanographic Parameters (Mumbai Coast)
               <div className="h-2 w-2 bg-chart-1 rounded-full animate-pulse-glow"></div>
             </CardTitle>
           </CardHeader>
           <CardContent className="h-64">
-            <SpeciesTrendChart trend={trend} />
+            <SpeciesTrendChart trend={temperatureTrend} />
           </CardContent>
         </Card>
 
@@ -201,10 +351,10 @@ export default function DashboardPage() {
           style={{ animationDelay: "500ms" }}
         >
           <CardHeader>
-            <CardTitle>Data Source Distribution</CardTitle>
+            <CardTitle>Species Conservation Status</CardTitle>
           </CardHeader>
           <CardContent className="h-64">
-            <SourceDistributionChart dist={dist} />
+            <SourceDistributionChart dist={conservationData} />
           </CardContent>
         </Card>
       </div>
@@ -218,12 +368,12 @@ export default function DashboardPage() {
         >
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              Real-time HAB Alerts Timeline
+              Marine Alerts Timeline (7 days)
               <div className="h-2 w-2 bg-chart-2 rounded-full animate-gentle-float"></div>
             </CardTitle>
           </CardHeader>
           <CardContent className="h-64">
-            <HabTimelineChart habTimeline={habTimeline} />
+            <HabTimelineChart habTimeline={habTimelineData} />
           </CardContent>
         </Card>
         <Card
@@ -234,7 +384,7 @@ export default function DashboardPage() {
         >
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              Notifications
+              AI Anomaly Alerts
               {anomalies.length > 0 && (
                 <div className="h-2 w-2 bg-yellow-400 rounded-full animate-pulse-glow"></div>
               )}
@@ -258,7 +408,7 @@ export default function DashboardPage() {
             {anomalies.length === 0 && (
               <div className="text-sm text-muted-foreground text-center py-8">
                 <div className="text-green-400 text-2xl mb-2">✓</div>
-                No new anomalies.
+                No AI anomalies detected.
               </div>
             )}
           </CardContent>

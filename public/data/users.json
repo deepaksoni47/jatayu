@@ -1,7 +1,241 @@
 {
-  "users": [
-    { "name": "Ananya Gupta", "email": "ananya@incois.gov", "role": "Scientist" },
-    { "name": "Rajesh Kumar", "email": "rajesh@cmlre.gov", "role": "Policymaker" },
-    { "name": "Meera Iyer", "email": "meera@fisheries.gov", "role": "Fisheries Manager" }
-  ]
+  "metadata": {
+    "user_management_system": "Jatayu Access Control v2.4.1",
+    "last_updated": "2025-09-28T14:20:00Z",
+    "total_users": 234,
+    "active_users": 198,
+    "pending_approvals": 12,
+    "security_clearance_levels": 4
+  },
+  "user_directory": [
+    {
+      "user_id": "USR-001",
+      "name": "Dr. Ananya Sharma",
+      "email": "dr.sharma@incois.gov.in",
+      "role": "Senior Marine Scientist",
+      "organization": "Indian National Centre for Ocean Information Services",
+      "department": "Physical Oceanography",
+      "security_clearance": "level_3",
+      "specializations": [
+        "oceanographic_modeling",
+        "climate_analysis",
+        "data_visualization"
+      ],
+      "location": "Hyderabad",
+      "last_login": "2025-09-28T15:45:00Z",
+      "account_status": "active",
+      "data_access_permissions": [
+        "oceanographic_data",
+        "satellite_data",
+        "model_outputs"
+      ],
+      "projects_assigned": ["Arabian_Sea_Monitoring", "Climate_Change_Impact"],
+      "publications": 47,
+      "experience_years": 12
+    },
+    {
+      "user_id": "USR-002",
+      "name": "Rajesh Kumar Nair",
+      "email": "rajesh.nair@cmlre.res.in",
+      "role": "Marine Policy Analyst",
+      "organization": "Centre for Marine Living Resources and Ecology",
+      "department": "Policy and Governance",
+      "security_clearance": "level_2",
+      "specializations": [
+        "environmental_policy",
+        "EIA_assessment",
+        "regulatory_compliance"
+      ],
+      "location": "Kochi",
+      "last_login": "2025-09-28T13:20:00Z",
+      "account_status": "active",
+      "data_access_permissions": [
+        "policy_reports",
+        "assessment_data",
+        "compliance_records"
+      ],
+      "projects_assigned": ["Marine_Protected_Areas", "Sustainable_Fisheries"],
+      "policy_documents_authored": 23,
+      "experience_years": 8
+    },
+    {
+      "user_id": "USR-003",
+      "name": "Dr. Meera Patel",
+      "email": "meera.patel@gsi.gov.in",
+      "role": "Marine Research Coordinator",
+      "organization": "Geological Survey of India - Marine Wing",
+      "department": "Marine Geology",
+      "security_clearance": "level_3",
+      "specializations": [
+        "sedimentology",
+        "marine_geology",
+        "research_coordination"
+      ],
+      "location": "Mumbai",
+      "last_login": "2025-09-28T14:58:00Z",
+      "account_status": "active",
+      "data_access_permissions": [
+        "geological_data",
+        "research_datasets",
+        "expedition_data"
+      ],
+      "projects_assigned": ["Continental_Shelf_Survey", "Deep_Sea_Exploration"],
+      "expeditions_led": 15,
+      "experience_years": 10
+    },
+    {
+      "user_id": "USR-004",
+      "name": "Priya Nair",
+      "email": "priya.nair@niot.res.in",
+      "role": "Marine Biologist",
+      "organization": "National Institute of Ocean Technology",
+      "department": "Marine Biology and Ecology",
+      "security_clearance": "level_2",
+      "specializations": [
+        "marine_biodiversity",
+        "species_identification",
+        "ecosystem_monitoring"
+      ],
+      "location": "Chennai",
+      "last_login": "2025-09-28T13:45:00Z",
+      "account_status": "active",
+      "data_access_permissions": [
+        "species_database",
+        "biodiversity_data",
+        "ecological_surveys"
+      ],
+      "projects_assigned": ["Species_Monitoring", "Biodiversity_Assessment"],
+      "species_discoveries": 8,
+      "experience_years": 6
+    },
+    {
+      "user_id": "USR-005",
+      "name": "Captain Suresh Menon",
+      "email": "suresh.menon@indiancoastguard.gov.in",
+      "role": "Coast Guard Environmental Officer",
+      "organization": "Indian Coast Guard",
+      "department": "Environmental Protection",
+      "security_clearance": "level_4",
+      "specializations": [
+        "maritime_law_enforcement",
+        "pollution_response",
+        "emergency_coordination"
+      ],
+      "location": "Kochi",
+      "last_login": "2025-09-28T12:30:00Z",
+      "account_status": "active",
+      "data_access_permissions": [
+        "alert_systems",
+        "emergency_data",
+        "enforcement_records"
+      ],
+      "projects_assigned": ["Marine_Pollution_Response", "Coastal_Security"],
+      "operations_coordinated": 156,
+      "experience_years": 18
+    },
+    {
+      "user_id": "USR-006",
+      "name": "Dr. Kavitha Sundaram",
+      "email": "kavitha@cmfri.res.in",
+      "role": "Fisheries Scientist",
+      "organization": "Central Marine Fisheries Research Institute",
+      "department": "Fisheries Resource Assessment",
+      "security_clearance": "level_2",
+      "specializations": [
+        "stock_assessment",
+        "fisheries_management",
+        "aquaculture"
+      ],
+      "location": "Kochi",
+      "last_login": "2025-09-28T11:15:00Z",
+      "account_status": "active",
+      "data_access_permissions": [
+        "fisheries_data",
+        "catch_statistics",
+        "vessel_monitoring"
+      ],
+      "projects_assigned": ["Sustainable_Fishing", "Stock_Recovery"],
+      "management_plans_developed": 12,
+      "experience_years": 14
+    },
+    {
+      "user_id": "USR-007",
+      "name": "Arun Krishnan",
+      "email": "arun@kerala.fisheries.gov.in",
+      "role": "State Fisheries Manager",
+      "organization": "Kerala Department of Fisheries",
+      "department": "Marine Fisheries Division",
+      "security_clearance": "level_1",
+      "specializations": [
+        "fisheries_administration",
+        "license_management",
+        "community_outreach"
+      ],
+      "location": "Thiruvananthapuram",
+      "last_login": "2025-09-28T10:45:00Z",
+      "account_status": "active",
+      "data_access_permissions": [
+        "state_fisheries_data",
+        "licensing_records",
+        "community_data"
+      ],
+      "projects_assigned": [
+        "Coastal_Community_Support",
+        "Fishing_License_System"
+      ],
+      "communities_served": 45,
+      "experience_years": 11
+    },
+    {
+      "user_id": "USR-008",
+      "name": "Dr. Ravi Shankar",
+      "email": "ravi.shankar@isro.gov.in",
+      "role": "Satellite Oceanography Specialist",
+      "organization": "Indian Space Research Organisation",
+      "department": "Space Applications Centre",
+      "security_clearance": "level_3",
+      "specializations": [
+        "satellite_remote_sensing",
+        "ocean_color",
+        "data_processing"
+      ],
+      "location": "Ahmedabad",
+      "last_login": "2025-09-28T09:30:00Z",
+      "account_status": "active",
+      "data_access_permissions": [
+        "satellite_imagery",
+        "remote_sensing_data",
+        "processing_algorithms"
+      ],
+      "projects_assigned": ["Ocean_Color_Monitor", "Coastal_Zone_Mapping"],
+      "satellites_operated": 5,
+      "experience_years": 16
+    }
+  ],
+  "role_distribution": [
+    { "role": "Scientists", "count": 123, "percentage": 52.6 },
+    { "role": "Policy_Analysts", "count": 45, "percentage": 19.2 },
+    { "role": "Field_Officers", "count": 34, "percentage": 14.5 },
+    { "role": "System_Administrators", "count": 18, "percentage": 7.7 },
+    { "role": "Management", "count": 14, "percentage": 6.0 }
+  ],
+  "organization_distribution": [
+    { "organization": "INCOIS", "users": 67 },
+    { "organization": "CMFRI", "users": 45 },
+    { "organization": "CMLRE", "users": 34 },
+    { "organization": "NIOT", "users": 28 },
+    { "organization": "State_Fisheries_Depts", "users": 60 }
+  ],
+  "activity_statistics": {
+    "daily_active_users": 156,
+    "weekly_active_users": 201,
+    "average_session_duration_minutes": 47,
+    "most_accessed_modules": [
+      "dashboard",
+      "alerts",
+      "data_analysis",
+      "reports"
+    ],
+    "peak_usage_time": "10:00-16:00 IST"
+  }
 }

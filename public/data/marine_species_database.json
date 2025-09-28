@@ -1,0 +1,344 @@
+{
+  "metadata": {
+    "database_version": "v2.1.3",
+    "last_updated": "2025-09-28T12:00:00Z",
+    "total_species": 127,
+    "classification_system": "WoRMS (World Register of Marine Species)",
+    "conservation_status_source": "IUCN Red List 2024.1"
+  },
+  "species_categories": {
+    "taxonomic_groups": [
+      { "id": "fish", "name": "Fish", "count": 45 },
+      { "id": "crustaceans", "name": "Crustaceans", "count": 23 },
+      { "id": "mollusks", "name": "Mollusks", "count": 18 },
+      {
+        "id": "cnidarians",
+        "name": "Cnidarians (Corals, Jellyfish)",
+        "count": 15
+      },
+      { "id": "echinoderms", "name": "Echinoderms", "count": 12 },
+      { "id": "marine_mammals", "name": "Marine Mammals", "count": 8 },
+      { "id": "seabirds", "name": "Seabirds", "count": 6 }
+    ],
+    "conservation_status": [
+      {
+        "status": "LC",
+        "name": "Least Concern",
+        "count": 78,
+        "color": "#00C851"
+      },
+      {
+        "status": "NT",
+        "name": "Near Threatened",
+        "count": 21,
+        "color": "#ffbb33"
+      },
+      { "status": "VU", "name": "Vulnerable", "count": 15, "color": "#ff6384" },
+      { "status": "EN", "name": "Endangered", "count": 8, "color": "#ff4444" },
+      {
+        "status": "CR",
+        "name": "Critically Endangered",
+        "count": 3,
+        "color": "#cc0000"
+      },
+      {
+        "status": "DD",
+        "name": "Data Deficient",
+        "count": 2,
+        "color": "#9e9e9e"
+      }
+    ],
+    "habitat_types": [
+      { "habitat": "coastal_waters", "name": "Coastal Waters", "count": 52 },
+      { "habitat": "deep_sea", "name": "Deep Sea (>200m)", "count": 28 },
+      { "habitat": "estuarine", "name": "Estuarine", "count": 25 },
+      { "habitat": "pelagic", "name": "Open Ocean (Pelagic)", "count": 18 },
+      { "habitat": "coral_reef", "name": "Coral Reefs", "count": 15 },
+      { "habitat": "mangrove", "name": "Mangrove Systems", "count": 12 }
+    ]
+  },
+  "species_list": [
+    {
+      "species_id": "SP001",
+      "scientific_name": "Lutjanus argentimaculatus",
+      "common_name": "Mangrove Red Snapper",
+      "family": "Lutjanidae",
+      "order": "Perciformes",
+      "class": "Actinopterygii",
+      "taxonomic_group": "fish",
+      "conservation_status": "VU",
+      "conservation_trend": "declining",
+      "habitat": ["mangrove", "estuarine", "coastal_waters"],
+      "depth_range": { "min": 1, "max": 120 },
+      "geographic_distribution": [
+        "Bay of Bengal",
+        "Arabian Sea",
+        "Indo-Pacific"
+      ],
+      "threats": ["overfishing", "habitat_loss", "pollution"],
+      "ecological_role": "predator",
+      "commercial_importance": "high",
+      "size_range": { "min_cm": 35, "max_cm": 150 },
+      "recent_observations": 23,
+      "population_trend": "decreasing",
+      "last_sighting": "2025-09-26T14:30:00Z",
+      "observation_confidence": 0.92
+    },
+    {
+      "species_id": "SP002",
+      "scientific_name": "Rhincodon typus",
+      "common_name": "Whale Shark",
+      "family": "Rhincodontidae",
+      "order": "Orectolobiformes",
+      "class": "Chondrichthyes",
+      "taxonomic_group": "fish",
+      "conservation_status": "EN",
+      "conservation_trend": "declining",
+      "habitat": ["pelagic", "coastal_waters"],
+      "depth_range": { "min": 0, "max": 1000 },
+      "geographic_distribution": [
+        "Arabian Sea",
+        "Bay of Bengal",
+        "Global tropical waters"
+      ],
+      "threats": ["ship_strikes", "fishing_nets", "climate_change"],
+      "ecological_role": "filter_feeder",
+      "commercial_importance": "ecotourism",
+      "size_range": { "min_cm": 400, "max_cm": 1200 },
+      "recent_observations": 3,
+      "population_trend": "decreasing",
+      "last_sighting": "2025-09-15T08:15:00Z",
+      "observation_confidence": 0.98
+    },
+    {
+      "species_id": "SP003",
+      "scientific_name": "Portunus pelagicus",
+      "common_name": "Blue Swimming Crab",
+      "family": "Portunidae",
+      "order": "Decapoda",
+      "class": "Malacostraca",
+      "taxonomic_group": "crustaceans",
+      "conservation_status": "LC",
+      "conservation_trend": "stable",
+      "habitat": ["coastal_waters", "estuarine"],
+      "depth_range": { "min": 1, "max": 50 },
+      "geographic_distribution": [
+        "Bay of Bengal",
+        "Arabian Sea",
+        "Indo-West Pacific"
+      ],
+      "threats": ["overfishing", "habitat_degradation"],
+      "ecological_role": "omnivore_scavenger",
+      "commercial_importance": "high",
+      "size_range": { "min_cm": 8, "max_cm": 20 },
+      "recent_observations": 156,
+      "population_trend": "stable",
+      "last_sighting": "2025-09-28T11:45:00Z",
+      "observation_confidence": 0.89
+    },
+    {
+      "species_id": "SP004",
+      "scientific_name": "Chelonia mydas",
+      "common_name": "Green Sea Turtle",
+      "family": "Cheloniidae",
+      "order": "Testudines",
+      "class": "Reptilia",
+      "taxonomic_group": "marine_reptiles",
+      "conservation_status": "EN",
+      "conservation_trend": "improving",
+      "habitat": ["coastal_waters", "coral_reef"],
+      "depth_range": { "min": 0, "max": 40 },
+      "geographic_distribution": [
+        "Bay of Bengal",
+        "Arabian Sea",
+        "Global tropical oceans"
+      ],
+      "threats": ["plastic_pollution", "coastal_development", "fishing_nets"],
+      "ecological_role": "herbivore",
+      "commercial_importance": "conservation",
+      "size_range": { "min_cm": 80, "max_cm": 150 },
+      "recent_observations": 12,
+      "population_trend": "increasing",
+      "last_sighting": "2025-09-22T16:20:00Z",
+      "observation_confidence": 0.95
+    },
+    {
+      "species_id": "SP005",
+      "scientific_name": "Acropora cervicornis",
+      "common_name": "Staghorn Coral",
+      "family": "Acroporidae",
+      "order": "Scleractinia",
+      "class": "Anthozoa",
+      "taxonomic_group": "cnidarians",
+      "conservation_status": "CR",
+      "conservation_trend": "declining",
+      "habitat": ["coral_reef"],
+      "depth_range": { "min": 5, "max": 30 },
+      "geographic_distribution": [
+        "Lakshadweep",
+        "Gulf of Mannar",
+        "Andaman Islands"
+      ],
+      "threats": ["ocean_acidification", "coral_bleaching", "pollution"],
+      "ecological_role": "ecosystem_engineer",
+      "commercial_importance": "ecotourism",
+      "size_range": { "min_cm": 10, "max_cm": 200 },
+      "recent_observations": 8,
+      "population_trend": "severely_declining",
+      "last_sighting": "2025-09-10T13:00:00Z",
+      "observation_confidence": 0.87
+    },
+    {
+      "species_id": "SP006",
+      "scientific_name": "Sousa plumbea",
+      "common_name": "Indian Ocean Humpback Dolphin",
+      "family": "Delphinidae",
+      "order": "Cetacea",
+      "class": "Mammalia",
+      "taxonomic_group": "marine_mammals",
+      "conservation_status": "EN",
+      "conservation_trend": "declining",
+      "habitat": ["coastal_waters", "estuarine"],
+      "depth_range": { "min": 2, "max": 25 },
+      "geographic_distribution": [
+        "Arabian Sea Coast",
+        "Bay of Bengal",
+        "Western Indian Ocean"
+      ],
+      "threats": ["boat_strikes", "fishing_nets", "noise_pollution"],
+      "ecological_role": "apex_predator",
+      "commercial_importance": "ecotourism",
+      "size_range": { "min_cm": 200, "max_cm": 280 },
+      "recent_observations": 4,
+      "population_trend": "decreasing",
+      "last_sighting": "2025-09-18T07:30:00Z",
+      "observation_confidence": 0.91
+    },
+    {
+      "species_id": "SP007",
+      "scientific_name": "Pterocarpus indicus",
+      "common_name": "Red Sanders Invasive Algae",
+      "family": "Sargassaceae",
+      "order": "Fucales",
+      "class": "Phaeophyceae",
+      "taxonomic_group": "algae",
+      "conservation_status": "LC",
+      "conservation_trend": "increasing",
+      "habitat": ["coastal_waters", "estuarine"],
+      "depth_range": { "min": 0, "max": 15 },
+      "geographic_distribution": [
+        "Mumbai Harbor",
+        "Chennai Coast",
+        "Introduced species"
+      ],
+      "threats": [],
+      "ecological_role": "invasive_species",
+      "commercial_importance": "negative",
+      "size_range": { "min_cm": 5, "max_cm": 300 },
+      "recent_observations": 87,
+      "population_trend": "rapidly_increasing",
+      "last_sighting": "2025-09-27T09:15:00Z",
+      "observation_confidence": 0.94,
+      "invasive_status": "established",
+      "impact_score": 8.2
+    },
+    {
+      "species_id": "SP008",
+      "scientific_name": "Thunnus albacares",
+      "common_name": "Yellowfin Tuna",
+      "family": "Scombridae",
+      "order": "Perciformes",
+      "class": "Actinopterygii",
+      "taxonomic_group": "fish",
+      "conservation_status": "NT",
+      "conservation_trend": "declining",
+      "habitat": ["pelagic"],
+      "depth_range": { "min": 0, "max": 250 },
+      "geographic_distribution": [
+        "Arabian Sea",
+        "Bay of Bengal",
+        "Global tropical waters"
+      ],
+      "threats": ["overfishing", "climate_change"],
+      "ecological_role": "apex_predator",
+      "commercial_importance": "very_high",
+      "size_range": { "min_cm": 100, "max_cm": 240 },
+      "recent_observations": 34,
+      "population_trend": "decreasing",
+      "last_sighting": "2025-09-25T14:50:00Z",
+      "observation_confidence": 0.88
+    }
+  ],
+  "recent_discoveries": [
+    {
+      "discovery_id": "DSC001",
+      "date": "2025-09-20T00:00:00Z",
+      "type": "new_species",
+      "species_id": "SP009",
+      "scientific_name": "Hippocampus bengalensis",
+      "common_name": "Bengal Seahorse",
+      "discovery_method": "eDNA_sequencing",
+      "location": "Sundarbans Mangroves",
+      "coordinates": { "lat": 21.9497, "lng": 88.9468 },
+      "confidence": 0.89,
+      "description": "New seahorse species identified through environmental DNA analysis",
+      "research_team": "Marine Biodiversity Institute",
+      "publication_status": "under_review"
+    },
+    {
+      "discovery_id": "DSC002",
+      "date": "2025-09-15T00:00:00Z",
+      "type": "range_extension",
+      "species_id": "SP002",
+      "scientific_name": "Rhincodon typus",
+      "common_name": "Whale Shark",
+      "discovery_method": "satellite_tracking",
+      "location": "Deep Arabian Sea",
+      "coordinates": { "lat": 14.235, "lng": 66.1234 },
+      "confidence": 0.96,
+      "description": "Whale shark tracked to previously unrecorded depths and locations",
+      "research_team": "Ocean Giants Project",
+      "publication_status": "published"
+    }
+  ],
+  "invasive_species_alerts": [
+    {
+      "alert_id": "INV001",
+      "species_id": "SP007",
+      "alert_level": "high",
+      "spread_rate": "rapid",
+      "affected_areas": ["Mumbai", "Thane", "Raigad"],
+      "economic_impact": "moderate",
+      "ecological_impact": "high",
+      "control_measures": [
+        "mechanical_removal",
+        "biological_control_research",
+        "monitoring_expansion"
+      ],
+      "first_detected": "2025-07-12T00:00:00Z",
+      "last_updated": "2025-09-27T00:00:00Z"
+    }
+  ],
+  "biodiversity_hotspots": [
+    {
+      "hotspot_id": "BH001",
+      "name": "Western Ghats Marine Extension",
+      "coordinates": { "lat": 15.2993, "lng": 74.124 },
+      "area_km2": 245,
+      "species_count": 67,
+      "endemic_species": 12,
+      "threat_level": "moderate",
+      "protection_status": "partial"
+    },
+    {
+      "hotspot_id": "BH002",
+      "name": "Andaman Sea Coral Triangle",
+      "coordinates": { "lat": 11.7401, "lng": 92.6586 },
+      "area_km2": 1850,
+      "species_count": 89,
+      "endemic_species": 8,
+      "threat_level": "high",
+      "protection_status": "protected"
+    }
+  ]
+}

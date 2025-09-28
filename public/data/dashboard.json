@@ -1,11 +1,65 @@
 {
-  "datasets": 1245,
-  "species": 318,
-  "alerts": 7,
-  "jobs": 12,
+  "metadata": {
+    "last_updated": "2025-09-28T15:30:00Z",
+    "system_status": "operational",
+    "data_sources_online": 15,
+    "ai_models_active": 6
+  },
+  "datasets": 2847,
+  "species": 127,
+  "alerts": 6,
+  "jobs": 4,
+  "real_time_stats": {
+    "monitoring_stations": 4,
+    "sensors_active": 24,
+    "data_points_today": 5760,
+    "processing_queue": 12,
+    "storage_used_gb": 890.5,
+    "uptime_hours": 2184
+  },
   "anomalies": [
-    { "title": "Thermal anomaly detected", "time": "2 min ago", "detail": "Sea surface temp spike near 12.3N, 74.8E" },
-    { "title": "Rare species signal", "time": "8 min ago", "detail": "eDNA hints of Mobula birostris near reef edge" },
-    { "title": "Salinity drop", "time": "12 min ago", "detail": "Freshwater inflow suspected near estuary" }
-  ]
+    {
+      "title": "Temperature Spike - Arabian Sea",
+      "time": "3 min ago",
+      "detail": "SST anomaly +3.2°C above normal at 16.84°N, 69.63°E - Station ARA_01",
+      "severity": "moderate",
+      "confidence": 0.91
+    },
+    {
+      "title": "Species Absence Alert",
+      "time": "8 min ago",
+      "detail": "Significant reduction in fish abundance detected at Bay of Bengal monitoring station",
+      "severity": "high",
+      "confidence": 0.88
+    },
+    {
+      "title": "Water Quality Degradation",
+      "time": "15 min ago",
+      "detail": "Turbidity levels elevated (5.2 NTU) in Kerala backwaters - likely monsoon runoff",
+      "severity": "low",
+      "confidence": 0.76
+    },
+    {
+      "title": "AI Pattern Discovery",
+      "time": "23 min ago",
+      "detail": "New correlation found: Microplastic density negatively correlated with biodiversity (-0.84)",
+      "severity": "info",
+      "confidence": 0.87
+    }
+  ],
+  "system_health": {
+    "data_pipeline": "healthy",
+    "ai_processing": "healthy",
+    "alert_system": "healthy",
+    "storage_capacity": 78.5,
+    "network_latency_ms": 45,
+    "error_rate_percent": 0.02
+  },
+  "recent_activity": {
+    "datasets_ingested_today": 47,
+    "ai_jobs_completed": 23,
+    "alerts_generated": 6,
+    "species_identified": 8,
+    "correlations_discovered": 3
+  }
 }

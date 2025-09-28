@@ -3,6 +3,7 @@ import AppShell from "@/components/layout/app-shell";
 import useSWR from "swr";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   ResponsiveContainer,
   BarChart,
@@ -28,11 +29,23 @@ function Otolith() {
     revalidateOnFocus: false,
   });
   const [job, setJob] = useState(0);
-  useEffect(() => {
-    // Reduce update frequency from 500ms to 1000ms to improve performance
-    const id = setInterval(() => setJob((p) => (p >= 100 ? 100 : p + 5)), 1000);
-    return () => clearInterval(id);
-  }, []);
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const startProcessing = () => {
+    setIsProcessing(true);
+    setJob(0);
+    const id = setInterval(() => {
+      setJob((p) => {
+        if (p >= 100) {
+          clearInterval(id);
+          setIsProcessing(false);
+          return 100;
+        }
+        return p + 5;
+      });
+    }, 1000);
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <Card className="lg:col-span-2">
@@ -41,18 +54,37 @@ function Otolith() {
         </CardHeader>
         <CardContent className="h-64">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data?.ageDistribution || []}>
-              <XAxis dataKey="species" />
+            <BarChart data={data?.age_distribution || []}>
+              <XAxis dataKey="common_name" />
               <YAxis />
               <Tooltip />
               <Bar dataKey="count" fill="var(--chart-1)" />
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4">
-            <div className="text-sm text-muted-foreground mb-1">
-              AI Job Progress
+            <div className="flex items-center justify-between mb-2">
+              <div className="text-sm text-muted-foreground">
+                AI Otolith Analysis
+              </div>
+              <Button
+                size="sm"
+                onClick={startProcessing}
+                disabled={isProcessing}
+                variant={isProcessing ? "secondary" : "default"}
+              >
+                {isProcessing ? "Processing..." : "Start Analysis"}
+              </Button>
             </div>
             <Progress value={job} />
+            {job > 0 && (
+              <div className="text-xs text-muted-foreground mt-1">
+                {isProcessing
+                  ? `Processing: ${job}%`
+                  : job === 100
+                  ? "Analysis Complete"
+                  : "Ready to analyze"}
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
@@ -70,7 +102,7 @@ function Otolith() {
               </tr>
             </thead>
             <tbody>
-              {(data?.predictions || []).map((r: any, i: number) => (
+              {(data?.growth_predictions || []).map((r: any, i: number) => (
                 <tr key={i} className="border-t">
                   <td className="p-2">{r.species}</td>
                   <td className="p-2">{r.group}</td>
@@ -85,7 +117,7 @@ function Otolith() {
               alt="Otolith sample"
               className="w-full rounded-md border"
             />
-            {(data?.boxes || []).map((b: any, i: number) => (
+            {(data?.detection_boxes || []).map((b: any, i: number) => (
               <div
                 key={i}
                 className="absolute border-2 border-accent"
@@ -115,9 +147,9 @@ function Taxonomy() {
         </CardHeader>
         <CardContent className="h-72">
           <ResponsiveContainer width="100%" height="100%">
-            <RadarChart data={data?.confidence || []}>
+            <RadarChart data={data?.taxonomic_confidence_scores || []}>
               <PolarGrid />
-              <PolarAngleAxis dataKey="label" />
+              <PolarAngleAxis dataKey="level" />
               <PolarRadiusAxis />
               <Radar
                 dataKey="score"
@@ -135,19 +167,20 @@ function Taxonomy() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-6 gap-1">
-            {(data?.heatmap || []).map((row: number[], rIdx: number) =>
-              row.map((v: number, cIdx: number) => (
-                <div
-                  key={`${rIdx}-${cIdx}`}
-                  className="aspect-square rounded-sm"
-                  style={{
-                    backgroundColor: `oklch(${60 + v * 30}% ${
-                      0.06 + v * 0.1
-                    } 200)`,
-                  }}
-                  aria-label={`Cell ${rIdx},${cIdx} value ${v.toFixed(2)}`}
-                />
-              ))
+            {(data?.classification_heatmap || []).map(
+              (row: number[], rIdx: number) =>
+                row.map((v: number, cIdx: number) => (
+                  <div
+                    key={`${rIdx}-${cIdx}`}
+                    className="aspect-square rounded-sm"
+                    style={{
+                      backgroundColor: `oklch(${60 + v * 30}% ${
+                        0.06 + v * 0.1
+                      } 200)`,
+                    }}
+                    aria-label={`Cell ${rIdx},${cIdx} value ${v.toFixed(2)}`}
+                  />
+                ))
             )}
           </div>
         </CardContent>
@@ -166,7 +199,7 @@ function EDNA() {
         </CardHeader>
         <CardContent className="h-64">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={data?.richness || []}>
+            <LineChart data={data?.species_richness_timeline || []}>
               <XAxis dataKey="date" />
               <YAxis />
               <Tooltip />
@@ -187,11 +220,11 @@ function EDNA() {
         </CardHeader>
         <CardContent className="h-64">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data?.abundance || []}>
+            <BarChart data={data?.site_abundance || []}>
               <XAxis dataKey="location" />
               <YAxis />
               <Tooltip />
-              <Bar dataKey="abundance" fill="var(--chart-4)" />
+              <Bar dataKey="abundance_index" fill="var(--chart-4)" />
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4">
@@ -203,12 +236,14 @@ function EDNA() {
                 </tr>
               </thead>
               <tbody>
-                {(data?.rare || []).map((r: any, i: number) => (
-                  <tr key={i} className="border-t">
-                    <td className="p-2">{r.species}</td>
-                    <td className="p-2">{r.confidence}%</td>
-                  </tr>
-                ))}
+                {(data?.rare_species_detections || []).map(
+                  (r: any, i: number) => (
+                    <tr key={i} className="border-t">
+                      <td className="p-2">{r.common_name}</td>
+                      <td className="p-2">{r.confidence}%</td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>

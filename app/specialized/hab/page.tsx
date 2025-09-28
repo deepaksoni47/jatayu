@@ -1,14 +1,21 @@
-"use client"
-import AppShell from "@/components/layout/app-shell"
-import useSWR from "swr"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from "recharts"
+"use client";
+import AppShell from "@/components/layout/app-shell";
+import useSWR from "swr";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json())
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function HABPage() {
-  const { data } = useSWR("/data/hab_alerts.json", fetcher)
-  const { data: timeline } = useSWR("/data/hab_timeline.json", fetcher)
+  const { data } = useSWR("/data/hab_alerts.json", fetcher);
+  const { data: timeline } = useSWR("/data/hab_timeline.json", fetcher);
 
   return (
     <AppShell>
@@ -27,7 +34,7 @@ export default function HABPage() {
                 </tr>
               </thead>
               <tbody>
-                {(data?.alerts || []).map((a: any, i: number) => (
+                {(data?.active_alerts || []).map((a: any, i: number) => (
                   <tr key={i} className="border-t">
                     <td className="p-2">{a.location}</td>
                     <td className="p-2 text-destructive">{a.severity}</td>
@@ -44,7 +51,7 @@ export default function HABPage() {
           </CardHeader>
           <CardContent>
             <div className="relative h-64 rounded-md border bg-[radial-gradient(circle_at_30%_30%,var(--ocean-2),var(--ocean-1))]">
-              {(data?.alerts || []).map((a: any, i: number) => (
+              {(data?.active_alerts || []).map((a: any, i: number) => (
                 <div
                   key={i}
                   className="absolute -translate-x-1/2 -translate-y-1/2"
@@ -70,12 +77,17 @@ export default function HABPage() {
                 <XAxis dataKey="timestamp" />
                 <YAxis />
                 <Tooltip />
-                <Line type="monotone" dataKey="alerts" stroke="var(--chart-5)" strokeWidth={2} />
+                <Line
+                  type="monotone"
+                  dataKey="alerts"
+                  stroke="var(--chart-5)"
+                  strokeWidth={2}
+                />
               </LineChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
       </div>
     </AppShell>
-  )
+  );
 }

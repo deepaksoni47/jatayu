@@ -1,7 +1,117 @@
 {
-  "alerts": [
-    { "location": "12.3N, 74.8E", "severity": "High", "timestamp": "2025-09-12T08:10:00Z", "x": 48, "y": 42 },
-    { "location": "11.9N, 75.1E", "severity": "Medium", "timestamp": "2025-09-12T07:50:00Z", "x": 55, "y": 48 },
-    { "location": "13.2N, 73.8E", "severity": "High", "timestamp": "2025-09-12T07:25:00Z", "x": 35, "y": 35 }
-  ]
+  "metadata": {
+    "monitoring_system": "Jatayu HAB Detection Network",
+    "last_updated": "2025-09-28T14:45:00Z",
+    "satellite_coverage": "MODIS Aqua/Terra, Sentinel-3",
+    "alert_threshold": "chlorophyll_a > 10 μg/L"
+  },
+  "active_alerts": [
+    {
+      "alert_id": "HAB-2025-0928-001",
+      "location": "9.93°N, 76.27°E",
+      "region_name": "Kerala Coast - Vembanad Lake",
+      "severity": "High",
+      "timestamp": "2025-09-28T14:30:00Z",
+      "bloom_type": "Alexandrium minutum",
+      "chlorophyll_concentration": 18.7,
+      "affected_area_km2": 127,
+      "toxicity_level": "moderate",
+      "wind_direction": "SW",
+      "current_speed": 0.8,
+      "x": 48,
+      "y": 42,
+      "confidence": 0.94,
+      "satellite_confirmation": true,
+      "field_samples_collected": true,
+      "public_health_risk": "medium",
+      "fishing_advisory": "suspended",
+      "estimated_duration_days": "5-7"
+    },
+    {
+      "alert_id": "HAB-2025-0927-002",
+      "location": "11.85°N, 75.15°E",
+      "region_name": "Calicut Coast",
+      "severity": "Medium",
+      "timestamp": "2025-09-27T22:50:00Z",
+      "bloom_type": "Karenia brevis",
+      "chlorophyll_concentration": 12.3,
+      "affected_area_km2": 45,
+      "toxicity_level": "low",
+      "wind_direction": "W",
+      "current_speed": 1.2,
+      "x": 55,
+      "y": 48,
+      "confidence": 0.87,
+      "satellite_confirmation": true,
+      "field_samples_collected": false,
+      "public_health_risk": "low",
+      "fishing_advisory": "caution",
+      "estimated_duration_days": "3-4"
+    },
+    {
+      "alert_id": "HAB-2025-0926-003",
+      "location": "13.18°N, 73.85°E",
+      "region_name": "Goa North Coast",
+      "severity": "High",
+      "timestamp": "2025-09-26T07:25:00Z",
+      "bloom_type": "Pyrodinium bahamense",
+      "chlorophyll_concentration": 21.5,
+      "affected_area_km2": 89,
+      "toxicity_level": "high",
+      "wind_direction": "NW",
+      "current_speed": 0.6,
+      "x": 35,
+      "y": 35,
+      "confidence": 0.91,
+      "satellite_confirmation": true,
+      "field_samples_collected": true,
+      "public_health_risk": "high",
+      "fishing_advisory": "banned",
+      "estimated_duration_days": "7-10"
+    },
+    {
+      "alert_id": "HAB-2025-0925-004",
+      "location": "15.48°N, 73.92°E",
+      "region_name": "Goa South Coast",
+      "severity": "Low",
+      "timestamp": "2025-09-25T16:10:00Z",
+      "bloom_type": "Pseudo-nitzschia spp.",
+      "chlorophyll_concentration": 8.9,
+      "affected_area_km2": 23,
+      "toxicity_level": "negligible",
+      "wind_direction": "SW",
+      "current_speed": 1.1,
+      "x": 42,
+      "y": 28,
+      "confidence": 0.78,
+      "satellite_confirmation": false,
+      "field_samples_collected": true,
+      "public_health_risk": "very_low",
+      "fishing_advisory": "monitor",
+      "estimated_duration_days": "2-3"
+    }
+  ],
+  "historical_summary": {
+    "last_30_days": {
+      "total_alerts": 12,
+      "high_severity": 4,
+      "medium_severity": 5,
+      "low_severity": 3,
+      "average_duration_days": 4.8,
+      "peak_chlorophyll": 24.1,
+      "most_affected_region": "Kerala Coast"
+    },
+    "seasonal_pattern": {
+      "monsoon_months": "increased_frequency",
+      "post_monsoon": "peak_intensity",
+      "winter": "minimal_activity"
+    }
+  },
+  "response_measures": {
+    "monitoring_frequency": "every_6_hours",
+    "field_teams_deployed": 3,
+    "coastal_communities_notified": 47,
+    "fishing_vessels_contacted": 156,
+    "tourist_advisories_issued": 8
+  }
 }

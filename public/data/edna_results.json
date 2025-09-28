@@ -1,15 +1,163 @@
 {
-  "richness": [
-    { "date": "2025-08-01", "richness": 18 },
-    { "date": "2025-08-08", "richness": 20 },
-    { "date": "2025-08-15", "richness": 24 },
-    { "date": "2025-08-22", "richness": 27 },
-    { "date": "2025-08-29", "richness": 31 }
+  "metadata": {
+    "analysis_system": "eDNA Marine Detector v3.1.4",
+    "sequencing_platform": "Illumina NovaSeq 6000",
+    "analysis_date": "2025-09-28T11:45:00Z",
+    "sample_period": "2025-09-01 to 2025-09-28",
+    "total_samples": 156,
+    "reference_database": "MitoFish + BOLD + Custom Indian Ocean",
+    "detection_threshold": 0.75
+  },
+  "species_richness_timeline": [
+    {
+      "date": "2025-09-01",
+      "richness": 23,
+      "new_detections": 3,
+      "sampling_sites": 8,
+      "water_conditions": "post_monsoon"
+    },
+    {
+      "date": "2025-09-08",
+      "richness": 28,
+      "new_detections": 5,
+      "sampling_sites": 10,
+      "water_conditions": "settling"
+    },
+    {
+      "date": "2025-09-15",
+      "richness": 34,
+      "new_detections": 6,
+      "sampling_sites": 12,
+      "water_conditions": "clear"
+    },
+    {
+      "date": "2025-09-22",
+      "richness": 31,
+      "new_detections": 2,
+      "sampling_sites": 11,
+      "water_conditions": "variable"
+    },
+    {
+      "date": "2025-09-28",
+      "richness": 36,
+      "new_detections": 7,
+      "sampling_sites": 14,
+      "water_conditions": "optimal"
+    }
   ],
-  "abundance": [
-    { "location": "Site A", "abundance": 120 },
-    { "location": "Site B", "abundance": 160 },
-    { "location": "Site C", "abundance": 95 }
+  "site_abundance": [
+    {
+      "site_id": "MUM_HARBOR_01",
+      "location": "Mumbai Harbor Complex",
+      "coordinates": { "lat": 18.922, "lng": 72.835 },
+      "abundance_index": 145,
+      "species_detected": 18,
+      "dominant_taxa": ["Gobiidae", "Engraulidae", "Clupeidae"],
+      "water_quality": "moderate",
+      "pollution_impact": "high"
+    },
+    {
+      "site_id": "KER_COAST_02",
+      "location": "Kerala Coastal Waters",
+      "coordinates": { "lat": 10.154, "lng": 76.218 },
+      "abundance_index": 198,
+      "species_detected": 24,
+      "dominant_taxa": ["Lutjanidae", "Serranidae", "Carangidae"],
+      "water_quality": "good",
+      "pollution_impact": "moderate"
+    },
+    {
+      "site_id": "GOA_REEF_01",
+      "location": "Goa Coral Reef System",
+      "coordinates": { "lat": 15.276, "lng": 73.918 },
+      "abundance_index": 167,
+      "species_detected": 31,
+      "dominant_taxa": ["Pomacentridae", "Labridae", "Chaetodontidae"],
+      "water_quality": "excellent",
+      "pollution_impact": "low"
+    },
+    {
+      "site_id": "TAM_ESTUARY_01",
+      "location": "Tamil Nadu Estuarine System",
+      "coordinates": { "lat": 11.372, "lng": 79.784 },
+      "abundance_index": 112,
+      "species_detected": 16,
+      "dominant_taxa": ["Mugilidae", "Ambassidae", "Cichlidae"],
+      "water_quality": "fair",
+      "pollution_impact": "high"
+    },
+    {
+      "site_id": "BOB_DEEP_02",
+      "location": "Bay of Bengal Deep Water",
+      "coordinates": { "lat": 14.847, "lng": 81.234 },
+      "abundance_index": 89,
+      "species_detected": 12,
+      "dominant_taxa": ["Myctophidae", "Stomiidae", "Gonostomatidae"],
+      "water_quality": "pristine",
+      "pollution_impact": "minimal"
+    }
   ],
-  "rare": [{ "species": "Mobula birostris", "confidence": 91 }, { "species": "Sphyrna lewini", "confidence": 88 }]
+  "rare_species_detections": [
+    {
+      "species": "Rhincodon typus",
+      "common_name": "Whale Shark",
+      "confidence": 94,
+      "detection_sites": 2,
+      "conservation_status": "EN",
+      "last_detection": "2025-09-25T14:30:00Z",
+      "genetic_diversity": "moderate",
+      "population_connectivity": "high"
+    },
+    {
+      "species": "Mobula birostris",
+      "common_name": "Giant Manta Ray",
+      "confidence": 91,
+      "detection_sites": 1,
+      "conservation_status": "EN",
+      "last_detection": "2025-09-20T09:15:00Z",
+      "genetic_diversity": "low",
+      "population_connectivity": "moderate"
+    },
+    {
+      "species": "Sphyrna lewini",
+      "common_name": "Scalloped Hammerhead",
+      "confidence": 88,
+      "detection_sites": 3,
+      "conservation_status": "CR",
+      "last_detection": "2025-09-18T16:45:00Z",
+      "genetic_diversity": "low",
+      "population_connectivity": "low"
+    },
+    {
+      "species": "Hippocampus bengalensis",
+      "common_name": "Bengal Seahorse",
+      "confidence": 89,
+      "detection_sites": 1,
+      "conservation_status": "DD",
+      "last_detection": "2025-09-20T11:20:00Z",
+      "genetic_diversity": "unknown",
+      "population_connectivity": "unknown",
+      "notes": "Potential new species - requires taxonomic verification"
+    }
+  ],
+  "ecosystem_insights": {
+    "biodiversity_hotspots": ["Goa Coral Reef System", "Kerala Coastal Waters"],
+    "degraded_areas": ["Mumbai Harbor Complex", "Tamil Nadu Estuarine System"],
+    "migration_corridors": [
+      "Arabian Sea - Bay of Bengal connectivity",
+      "Coastal upwelling zones"
+    ],
+    "seasonal_patterns": {
+      "monsoon_impact": "species_richness_decreases",
+      "post_monsoon": "peak_diversity_period",
+      "winter": "stable_communities"
+    }
+  },
+  "quality_control": {
+    "contamination_rate": 0.03,
+    "pcr_inhibition_rate": 0.07,
+    "negative_controls_passed": 0.98,
+    "positive_controls_passed": 0.96,
+    "sequencing_depth_adequacy": 0.94
+  }
 }
