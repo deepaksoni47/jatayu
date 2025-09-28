@@ -19,6 +19,43 @@ export default function HABPage() {
 
   return (
     <AppShell>
+      {/* HAB Monitoring Status Header */}
+      <div className="mb-6">
+        <Card className="border-red-500/20 bg-gradient-to-r from-red-50/50 to-pink-50/50 dark:from-red-950/20 dark:to-pink-950/20">
+          <CardContent className="p-4">
+            <div className="flex items-start justify-between">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="px-2 py-1 bg-red-600 text-white text-xs font-semibold rounded">
+                    HAB MONITORING
+                  </div>
+                  <div className="px-2 py-1 bg-amber-600 text-white text-xs font-semibold rounded">
+                    SAMPLE DATA
+                  </div>
+                </div>
+                <h2 className="font-semibold text-red-900 dark:text-red-100">
+                  Harmful Algal Bloom Detection
+                </h2>
+                <div className="space-y-1 text-sm text-red-800 dark:text-red-200">
+                  <p>
+                    Advanced HAB monitoring system with satellite integration
+                    and predictive modeling.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <span>• UI Framework: ✅ Complete</span>
+                    <span>• Sample Data: ✅ Loaded</span>
+                    <span>• Real-time Monitoring: 🚀 Coming Soon</span>
+                  </div>
+                </div>
+              </div>
+              <div className="text-xs text-red-600 dark:text-red-400">
+                Future Enhancement
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <Card className="lg:col-span-2">
           <CardHeader>

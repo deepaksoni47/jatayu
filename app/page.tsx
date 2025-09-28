@@ -286,6 +286,60 @@ export default function Dashboard() {
 
   return (
     <AppShell>
+      {/* Platform Status Header */}
+      <div className="mb-6">
+        <Card variant="gradient" className="border-blue-500/20">
+          <CardContent className="p-6">
+            <div className="flex items-start justify-between">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="px-3 py-1 bg-emerald-600 text-white text-xs font-semibold rounded-full">
+                    JATAYU v1.0
+                  </div>
+                  <div className="px-3 py-1 bg-amber-600 text-white text-xs font-semibold rounded-full">
+                    DEVELOPMENT BUILD
+                  </div>
+                </div>
+                <h1 className="text-2xl font-bold text-foreground">
+                  Marine Intelligence Platform
+                </h1>
+                <div className="space-y-2">
+                  <p className="text-muted-foreground max-w-2xl">
+                    AI-powered marine ecosystem monitoring for Indian coastal
+                    waters. Current build demonstrates core data visualization
+                    and basic analytics capabilities.
+                  </p>
+                  <div className="flex items-start gap-4 text-sm">
+                    <div className="flex items-center gap-1">
+                      <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                      <span className="text-green-700 dark:text-green-400">
+                        Dashboard, Charts
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <div className="h-2 w-2 bg-amber-500 rounded-full"></div>
+                      <span className="text-amber-700 dark:text-amber-400">
+                        AI Features (Demo)
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <div className="h-2 w-2 bg-gray-400 rounded-full"></div>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        Advanced Features (Planned)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-right text-sm text-muted-foreground">
+                <div>Build Date: Sept 2025</div>
+                <div>Status: Active Development</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {cards.map((c, index) => {
           const variants = ["gradient", "ocean", "forest", "cosmic"];
@@ -337,6 +391,9 @@ export default function Dashboard() {
             <CardTitle className="flex items-center gap-2">
               Oceanographic Parameters (Mumbai Coast)
               <div className="h-2 w-2 bg-chart-1 rounded-full animate-pulse-glow"></div>
+              <span className="text-xs text-emerald-600 bg-emerald-100 px-2 py-1 rounded dark:text-emerald-400 dark:bg-emerald-950/30">
+                WORKING
+              </span>
             </CardTitle>
           </CardHeader>
           <CardContent className="h-64">
@@ -351,7 +408,12 @@ export default function Dashboard() {
           style={{ animationDelay: "500ms" }}
         >
           <CardHeader>
-            <CardTitle>Species Conservation Status</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              Species Conservation Status
+              <span className="text-xs text-emerald-600 bg-emerald-100 px-2 py-1 rounded dark:text-emerald-400 dark:bg-emerald-950/30">
+                WORKING
+              </span>
+            </CardTitle>
           </CardHeader>
           <CardContent className="h-64">
             <SourceDistributionChart dist={conservationData} />
@@ -370,6 +432,9 @@ export default function Dashboard() {
             <CardTitle className="flex items-center gap-2">
               Marine Alerts Timeline (7 days)
               <div className="h-2 w-2 bg-chart-2 rounded-full animate-gentle-float"></div>
+              <span className="text-xs text-amber-600 bg-amber-100 px-2 py-1 rounded dark:text-amber-400 dark:bg-amber-950/30">
+                SIMULATED
+              </span>
             </CardTitle>
           </CardHeader>
           <CardContent className="h-64">
@@ -384,10 +449,13 @@ export default function Dashboard() {
         >
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              AI Anomaly Alerts
+              AI Anomaly Detection
               {anomalies.length > 0 && (
                 <div className="h-2 w-2 bg-yellow-400 rounded-full animate-pulse-glow"></div>
               )}
+              <span className="text-xs text-amber-600 bg-amber-100 px-2 py-1 rounded dark:text-amber-400 dark:bg-amber-950/30">
+                DEMO
+              </span>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 max-h-64 overflow-auto">

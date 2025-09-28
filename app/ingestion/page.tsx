@@ -84,6 +84,42 @@ export default function IngestionPage() {
 
   return (
     <AppShell>
+      {/* Data Ingestion Honest Status Header */}
+      <div className="mb-6">
+        <Card className="border-blue-500/20 bg-gradient-to-r from-blue-50/50 to-cyan-50/50 dark:from-blue-950/20 dark:to-cyan-950/20">
+          <CardContent className="p-4">
+            <div className="flex items-start justify-between">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="px-2 py-1 bg-blue-600 text-white text-xs font-semibold rounded">
+                    DATA PIPELINE
+                  </div>
+                  <div className="px-2 py-1 bg-emerald-600 text-white text-xs font-semibold rounded">
+                    FUNCTIONAL
+                  </div>
+                </div>
+                <h2 className="font-semibold text-blue-900 dark:text-blue-100">
+                  Data Ingestion & Processing
+                </h2>
+                <div className="space-y-1 text-sm text-blue-800 dark:text-blue-200">
+                  <p>
+                    File upload, parsing, and preview functionality is working.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <span>• File Upload: ✅ Working</span>
+                    <span>• Data Preview: ✅ Working</span>
+                    <span>• Advanced Processing: 🔄 Planned</span>
+                  </div>
+                </div>
+              </div>
+              <div className="text-xs text-blue-600 dark:text-blue-400">
+                Partial Implementation
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <Card className="lg:col-span-2">
           <CardHeader>

@@ -63,8 +63,11 @@ function Otolith() {
           </ResponsiveContainer>
           <div className="mt-4">
             <div className="flex items-center justify-between mb-2">
-              <div className="text-sm text-muted-foreground">
+              <div className="text-sm text-muted-foreground flex items-center gap-2">
                 AI Otolith Analysis
+                <span className="text-xs text-amber-600 bg-amber-100 px-2 py-1 rounded dark:text-amber-400 dark:bg-amber-950/30">
+                  SIMULATED
+                </span>
               </div>
               <Button
                 size="sm"
@@ -72,17 +75,17 @@ function Otolith() {
                 disabled={isProcessing}
                 variant={isProcessing ? "secondary" : "default"}
               >
-                {isProcessing ? "Processing..." : "Start Analysis"}
+                {isProcessing ? "Simulating..." : "Demo Analysis"}
               </Button>
             </div>
             <Progress value={job} />
             {job > 0 && (
               <div className="text-xs text-muted-foreground mt-1">
                 {isProcessing
-                  ? `Processing: ${job}%`
+                  ? `Simulating: ${job}%`
                   : job === 100
-                  ? "Analysis Complete"
-                  : "Ready to analyze"}
+                  ? "Demo Complete"
+                  : "Ready for demo"}
               </div>
             )}
           </div>
@@ -256,6 +259,43 @@ function EDNA() {
 export default function AIPage() {
   return (
     <AppShell>
+      {/* AI Features Honest Status Header */}
+      <div className="mb-6">
+        <Card className="border-orange-500/20 bg-gradient-to-r from-orange-50/50 to-red-50/50 dark:from-orange-950/20 dark:to-red-950/20">
+          <CardContent className="p-4">
+            <div className="flex items-start justify-between">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="px-2 py-1 bg-orange-600 text-white text-xs font-semibold rounded">
+                    AI MODULE
+                  </div>
+                  <div className="px-2 py-1 bg-amber-600 text-white text-xs font-semibold rounded">
+                    DEMONSTRATION ONLY
+                  </div>
+                </div>
+                <h2 className="font-semibold text-orange-900 dark:text-orange-100">
+                  Marine AI Analytics - Proof of Concept
+                </h2>
+                <div className="space-y-1 text-sm text-orange-800 dark:text-orange-200">
+                  <p>
+                    This section demonstrates the intended AI workflow and
+                    interface design.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <span>• UI/UX: Fully implemented</span>
+                    <span>• Data Processing: Simulated</span>
+                    <span>• ML Models: Planned for production</span>
+                  </div>
+                </div>
+              </div>
+              <div className="text-xs text-orange-600 dark:text-orange-400">
+                Demo Build
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       <Tabs defaultValue="otolith" className="w-full">
         <TabsList>
           <TabsTrigger value="otolith">Otolith Analysis</TabsTrigger>
