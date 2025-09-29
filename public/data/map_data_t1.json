@@ -1,5 +1,84 @@
 [
-  { "id": "p1", "lat": 12.3, "lon": 74.8, "salinity": 34.1, "temp": 27.2, "species": "Sardine" },
-  { "id": "p2", "lat": 13.1, "lon": 73.7, "salinity": 35.2, "temp": 25.4, "species": "Tuna" },
-  { "id": "p3", "lat": 11.9, "lon": 75.1, "salinity": 33.9, "temp": 26.8, "species": "Mackerel", "alerts": "HAB watch" }
+  {
+    "id": "p1",
+    "lat": 12.3,
+    "lon": 74.8,
+    "salinity": 34.1,
+    "temp": 27.2,
+    "species": "Sardine"
+  },
+  {
+    "id": "p2",
+    "lat": 13.1,
+    "lon": 73.7,
+    "salinity": 35.2,
+    "temp": 25.4,
+    "species": "Tuna"
+  },
+  {
+    "id": "p3",
+    "lat": 11.9,
+    "lon": 75.1,
+    "salinity": 33.9,
+    "temp": 26.8,
+    "species": "Mackerel",
+    "alerts": "HAB watch"
+  },
+  {
+    "id": "p4",
+    "lat": 19.0,
+    "lon": 72.8,
+    "salinity": 35.5,
+    "temp": 28.5,
+    "species": "Pomfret"
+  },
+  {
+    "id": "p5",
+    "lat": 15.3,
+    "lon": 74.1,
+    "salinity": 34.8,
+    "temp": 27.8,
+    "species": "Kingfish"
+  },
+  {
+    "id": "p6",
+    "lat": 13.0,
+    "lon": 80.2,
+    "salinity": 34.2,
+    "temp": 29.1,
+    "species": "Anchovy",
+    "alerts": "Temperature spike"
+  },
+  {
+    "id": "p7",
+    "lat": 17.7,
+    "lon": 83.2,
+    "salinity": 35.0,
+    "temp": 26.5,
+    "species": "Hilsa"
+  },
+  {
+    "id": "p8",
+    "lat": 9.9,
+    "lon": 76.2,
+    "salinity": 33.7,
+    "temp": 28.2,
+    "species": "Prawn"
+  },
+  {
+    "id": "p9",
+    "lat": 21.6,
+    "lon": 69.6,
+    "salinity": 36.1,
+    "temp": 27.0,
+    "species": "Catfish"
+  },
+  {
+    "id": "p10",
+    "lat": 16.5,
+    "lon": 81.8,
+    "salinity": 34.5,
+    "temp": 28.8,
+    "species": "Grouper"
+  }
 ]

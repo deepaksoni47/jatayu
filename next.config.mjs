@@ -9,6 +9,21 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Add headers to handle external resources
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value:
+              "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https: http:; img-src 'self' data: https: http:; style-src 'self' 'unsafe-inline' https:;",
+          },
+        ],
+      },
+    ];
+  },
   // Performance optimizations (simplified to avoid module issues)
   experimental: {
     // Enable modern bundling optimizations

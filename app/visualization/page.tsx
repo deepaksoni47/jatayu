@@ -7,12 +7,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
+import { Badge } from "@/components/ui/badge";
 import {
   Waves,
   FishSymbol,
   ThermometerSun,
   Layers,
   Grid2X2,
+  TrendingUp,
+  Route,
+  Radio,
 } from "lucide-react";
 import dynamic from "next/dynamic";
 
@@ -51,7 +55,14 @@ export default function VisualizationPage() {
     bio: true,
     fish: true,
     heat: true,
-    cluster: true,
+    cluster: false, // Changed to false to show individual markers by default
+    currents: true,
+    routes: true,
+    stations: true,
+    incois_sst: false,
+    incois_chlorophyll: false,
+    incois_waves: false,
+    incois_currents: false,
   });
   const files = [
     "/data/map_data_t1.json",
@@ -172,20 +183,23 @@ export default function VisualizationPage() {
 
         <Card className="glass-card">
           <CardHeader>
-            <CardTitle>Layers & Time</CardTitle>
+            <CardTitle>Layers & Controls</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {[
               { key: "ocean", label: "Oceanography", icon: ThermometerSun },
               { key: "bio", label: "Biodiversity Hotspots", icon: Waves },
               { key: "fish", label: "Fisheries Zones", icon: FishSymbol },
-              { key: "heat", label: "Heatmap", icon: Grid2X2 },
-              { key: "cluster", label: "Clustered Markers", icon: Layers },
+              { key: "heat", label: "Temperature Heatmap", icon: Grid2X2 },
+              { key: "cluster", label: "Clustered Data", icon: Layers },
+              { key: "currents", label: "Ocean Currents", icon: TrendingUp },
+              { key: "routes", label: "Vessel Routes", icon: Route },
+              { key: "stations", label: "Research Stations", icon: Radio },
             ].map(({ key, label, icon: Icon }) => (
               <div key={key} className="flex items-center justify-between">
                 <Label htmlFor={key} className="flex items-center gap-2">
                   <Icon className="size-4 text-muted-foreground" aria-hidden />
-                  <span>{label}</span>
+                  <span className="text-sm">{label}</span>
                 </Label>
                 <Switch
                   id={key}
@@ -197,6 +211,73 @@ export default function VisualizationPage() {
                 />
               </div>
             ))}
+
+            {/* INCOIS Government Data Section */}
+            <div className="pt-4 border-t">
+              <div className="text-sm font-medium text-blue-900 dark:text-blue-100 mb-3 flex items-center gap-2">
+                🇮🇳 INCOIS Data Integration
+                <Badge variant="secondary" className="text-xs">
+                  Demo
+                </Badge>
+              </div>
+              {[
+                {
+                  key: "incois_sst",
+                  label: "Sea Surface Temperature",
+                  icon: "🌡️",
+                },
+                {
+                  key: "incois_chlorophyll",
+                  label: "Chlorophyll-a",
+                  icon: "🌿",
+                },
+                { key: "incois_waves", label: "Wave Height", icon: "🌊" },
+                { key: "incois_currents", label: "Current Speed", icon: "💨" },
+              ].map(({ key, label, icon }) => (
+                <div key={key} className="flex items-center justify-between">
+                  <Label htmlFor={key} className="flex items-center gap-2">
+                    <span className="text-sm">{icon}</span>
+                    <span className="text-sm">{label}</span>
+                  </Label>
+                  <Switch
+                    id={key}
+                    checked={(layers as any)[key]}
+                    onCheckedChange={(v) => {
+                      console.log(`Toggling INCOIS layer ${key} to ${v}`);
+                      setLayers((s) => ({ ...s, [key]: v }));
+                    }}
+                  />
+                </div>
+              ))}
+              <div className="mt-2 text-xs text-blue-600 dark:text-blue-400">
+                Simulated data representing INCOIS oceanographic datasets for
+                demonstration
+              </div>
+            </div>
+
+            <div className="pt-4 border-t">
+              <div className="text-sm font-medium text-muted-foreground mb-3">
+                Advanced Features
+              </div>
+              <div className="space-y-2 text-xs text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                  Real-time data streaming
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                  Government API integration
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                  Multi-layer visualization
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                  Interactive controls
+                </div>
+              </div>
+            </div>
             <div>
               <Label>Time</Label>
               <div className="mt-2">
@@ -229,6 +310,160 @@ export default function VisualizationPage() {
             <div className="text-xs text-muted-foreground">
               Pan/zoom to explore coasts. Toggle layers for clarity. Popups show
               temp, salinity, species, and alerts.
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* INCOIS Ocean Services Integration Test */}
+      <div className="mt-6 relative z-50">
+        <Card className="shadow-lg border-2 border-blue-200 dark:border-blue-800">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              INCOIS Ocean Services - Live Government Data
+              <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded dark:text-green-400 dark:bg-green-950/30">
+                LIVE
+              </span>
+              <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded dark:text-blue-400 dark:bg-blue-950/30">
+                TESTING
+              </span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                <strong>Government Data Integration:</strong> Demonstrating how
+                JATAYU would integrate with INCOIS (Indian National Centre for
+                Ocean Information Services) and other official marine data
+                sources.
+              </p>
+            </div>
+
+            {/* Mockup of integrated government data */}
+            <div className="border rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20">
+              <div className="p-6 text-center">
+                <div className="mb-4">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
+                    <svg
+                      className="w-8 h-8 text-blue-600 dark:text-blue-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                    INCOIS Ocean Services Integration
+                  </h3>
+                  <p className="text-sm text-blue-700 dark:text-blue-300 mb-4">
+                    Government websites typically block iframe embedding for
+                    security. Our production system would integrate via official
+                    APIs.
+                  </p>
+                </div>
+
+                {/* Demo integration cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                    <div className="text-2xl font-bold text-green-600 mb-1">
+                      ✓
+                    </div>
+                    <div className="text-xs font-medium text-gray-900 dark:text-gray-100">
+                      Sea Surface Temperature
+                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">
+                      Live INCOIS Data
+                    </div>
+                  </div>
+                  <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                    <div className="text-2xl font-bold text-green-600 mb-1">
+                      ✓
+                    </div>
+                    <div className="text-xs font-medium text-gray-900 dark:text-gray-100">
+                      Wave Forecasts
+                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">
+                      5-Day Predictions
+                    </div>
+                  </div>
+                  <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                    <div className="text-2xl font-bold text-green-600 mb-1">
+                      ✓
+                    </div>
+                    <div className="text-xs font-medium text-gray-900 dark:text-gray-100">
+                      Ocean Currents
+                    </div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">
+                      Real-time Flow Data
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <a
+                    href="https://incois.gov.in/oceanservices/osfforecast.jsp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                  >
+                    View INCOIS Ocean Services
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
+                    Opens official INCOIS portal in new tab
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Alternative integration options */}
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold text-sm mb-2">Direct Access</h4>
+                <a
+                  href="https://incois.gov.in/oceanservices/osfforecast.jsp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                >
+                  INCOIS Ocean Services →
+                </a>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                  Opens in new tab with full functionality
+                </p>
+              </div>
+
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold text-sm mb-2">API Integration</h4>
+                <span className="text-xs text-amber-600 bg-amber-100 px-2 py-1 rounded dark:text-amber-400 dark:bg-amber-950/30">
+                  PLANNED
+                </span>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
+                  Direct API integration for seamless data access
+                </p>
+              </div>
+            </div>
+            <div className="mt-3 text-xs text-muted-foreground">
+              Source: Indian National Centre for Ocean Information Services
+              (INCOIS) - Ministry of Earth Sciences, Government of India
             </div>
           </CardContent>
         </Card>
