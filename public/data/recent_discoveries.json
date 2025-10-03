@@ -7,7 +7,7 @@
       "description": "eDNA analysis revealed a previously unknown bacterial species in the Andaman Sea with unique bioluminescent properties",
       "location": "Andaman Sea, Station AS-14",
       "coordinates": [92.7319, 11.7401],
-      "timestamp": "2025-09-23T14:30:00Z",
+      "timestamp": "2025-10-01T14:30:00Z",
       "source": "eDNA Metabarcoding",
       "confidence": 0.94,
       "category": "microbiology",
@@ -23,7 +23,7 @@
       "description": "AI analysis identified a 89% correlation between dolphin pod movements and pre-monsoon atmospheric pressure changes",
       "location": "Western Ghats Coastal Waters",
       "coordinates": [73.8567, 15.2993],
-      "timestamp": "2025-09-23T12:15:00Z",
+      "timestamp": "2025-10-02T12:15:00Z",
       "source": "AI Pattern Recognition",
       "confidence": 0.89,
       "category": "behavioral_ecology",
@@ -39,7 +39,7 @@
       "description": "Autonomous sensors recorded an unexpected 4°C temperature spike at 2000m depth, possibly indicating new hydrothermal activity",
       "location": "Central Indian Ocean Ridge",
       "coordinates": [70.2456, -12.5678],
-      "timestamp": "2025-09-23T09:45:00Z",
+      "timestamp": "2025-10-02T09:45:00Z",
       "source": "Autonomous Sensor Network",
       "confidence": 0.92,
       "category": "oceanography",
@@ -176,5 +176,5 @@
     "active_researchers": 15,
     "contributing_institutions": 8
   },
-  "last_updated": "2025-09-23T15:00:00Z"
+  "last_updated": "2025-10-03T15:00:00Z"
 }

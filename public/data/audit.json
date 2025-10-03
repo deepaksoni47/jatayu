@@ -9,8 +9,8 @@
   },
   "recent_events": [
     {
-      "timestamp": "2025-09-28T15:45:00Z",
-      "event_id": "AUD-2025-0928-001",
+      "timestamp": "2025-10-03T15:45:00Z",
+      "event_id": "AUD-2025-1003-001",
       "user": "dr.sharma@incois.gov.in",
       "user_role": "marine_scientist",
       "action": "Generated comprehensive species trend analysis report",
@@ -22,8 +22,8 @@
       "session_duration_minutes": 45
     },
     {
-      "timestamp": "2025-09-28T15:32:00Z",
-      "event_id": "AUD-2025-0928-002",
+      "timestamp": "2025-10-03T15:32:00Z",
+      "event_id": "AUD-2025-1003-002",
       "user": "ananya@cmlre.gov.in",
       "user_role": "oceanographer",
       "action": "Updated oceanographic sensor calibration parameters",

@@ -2,8 +2,8 @@
   "metadata": {
     "analysis_system": "eDNA Marine Detector v3.1.4",
     "sequencing_platform": "Illumina NovaSeq 6000",
-    "analysis_date": "2025-09-28T11:45:00Z",
-    "sample_period": "2025-09-01 to 2025-09-28",
+    "analysis_date": "2025-10-03T11:45:00Z",
+    "sample_period": "2025-09-01 to 2025-10-03",
     "total_samples": 156,
     "reference_database": "MitoFish + BOLD + Custom Indian Ocean",
     "detection_threshold": 0.75
@@ -38,7 +38,7 @@
       "water_conditions": "variable"
     },
     {
-      "date": "2025-09-28",
+      "date": "2025-10-03",
       "richness": 36,
       "new_detections": 7,
       "sampling_sites": 14,

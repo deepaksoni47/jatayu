@@ -1,7 +1,7 @@
 {
   "metadata": {
     "user_management_system": "Jatayu Access Control v2.4.1",
-    "last_updated": "2025-09-28T14:20:00Z",
+    "last_updated": "2025-10-03T14:20:00Z",
     "total_users": 234,
     "active_users": 198,
     "pending_approvals": 12,
@@ -22,7 +22,7 @@
         "data_visualization"
       ],
       "location": "Hyderabad",
-      "last_login": "2025-09-28T15:45:00Z",
+      "last_login": "2025-10-03T15:45:00Z",
       "account_status": "active",
       "data_access_permissions": [
         "oceanographic_data",
@@ -47,7 +47,7 @@
         "regulatory_compliance"
       ],
       "location": "Kochi",
-      "last_login": "2025-09-28T13:20:00Z",
+      "last_login": "2025-10-03T13:20:00Z",
       "account_status": "active",
       "data_access_permissions": [
         "policy_reports",
@@ -72,7 +72,7 @@
         "research_coordination"
       ],
       "location": "Mumbai",
-      "last_login": "2025-09-28T14:58:00Z",
+      "last_login": "2025-10-03T14:58:00Z",
       "account_status": "active",
       "data_access_permissions": [
         "geological_data",

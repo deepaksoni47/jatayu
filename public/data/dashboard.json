@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2025-09-28T15:30:00Z",
+    "last_updated": "2025-10-03T14:30:00Z",
     "system_status": "operational",
     "data_sources_online": 15,
     "ai_models_active": 6
@@ -20,31 +20,31 @@
   "anomalies": [
     {
       "title": "Temperature Spike - Arabian Sea",
-      "time": "3 min ago",
-      "detail": "SST anomaly +3.2°C above normal at 16.84°N, 69.63°E - Station ARA_01",
+      "time": "5 min ago",
+      "detail": "SST anomaly +2.8°C above normal at 16.84°N, 69.63°E - Station ARA_01",
       "severity": "moderate",
-      "confidence": 0.91
+      "confidence": 0.93
     },
     {
       "title": "Species Absence Alert",
-      "time": "8 min ago",
+      "time": "12 min ago",
       "detail": "Significant reduction in fish abundance detected at Bay of Bengal monitoring station",
       "severity": "high",
-      "confidence": 0.88
+      "confidence": 0.89
     },
     {
-      "title": "Water Quality Degradation",
-      "time": "15 min ago",
-      "detail": "Turbidity levels elevated (5.2 NTU) in Kerala backwaters - likely monsoon runoff",
-      "severity": "low",
-      "confidence": 0.76
+      "title": "Water Quality Improvement",
+      "time": "18 min ago",
+      "detail": "Post-monsoon water clarity restored in Kerala backwaters - turbidity normalized",
+      "severity": "info",
+      "confidence": 0.82
     },
     {
       "title": "AI Pattern Discovery",
-      "time": "23 min ago",
-      "detail": "New correlation found: Microplastic density negatively correlated with biodiversity (-0.84)",
+      "time": "27 min ago",
+      "detail": "New correlation found: Ocean pH levels show seasonal patterns linked to monsoon cycles",
       "severity": "info",
-      "confidence": 0.87
+      "confidence": 0.91
     }
   ],
   "system_health": {

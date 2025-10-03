@@ -54,8 +54,8 @@
     "peak_severity": "medium"
   },
   {
-    "timestamp": "Sep 28",
-    "date": "2025-09-28",
+    "timestamp": "Oct 03",
+    "date": "2025-10-03",
     "alerts": 6,
     "hab_alerts": 1,
     "total_affected_area_km2": 127,

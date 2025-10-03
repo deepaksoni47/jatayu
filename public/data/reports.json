@@ -1,18 +1,18 @@
 {
   "metadata": {
     "report_system": "Jatayu Policy & EIA Generator v2.8.1",
-    "last_updated": "2025-09-28T16:20:00Z",
+    "last_updated": "2025-10-03T16:20:00Z",
     "active_projects": 23,
     "completed_assessments": 187,
     "pending_reviews": 8
   },
   "recent_reports": [
     {
-      "report_id": "EIA-2025-0928-001",
+      "report_id": "EIA-2025-1003-001",
       "name": "Environmental Impact Assessment - Mumbai Port Expansion Phase III",
       "type": "EIA",
       "status": "under_review",
-      "date": "2025-09-28 14:15",
+      "date": "2025-10-03 14:15",
       "location": "Mumbai Harbor Complex",
       "coordinates": { "lat": 18.922, "lng": 72.835 },
       "project_type": "port_infrastructure",

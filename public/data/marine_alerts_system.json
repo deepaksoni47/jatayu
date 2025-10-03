@@ -1,7 +1,7 @@
 {
   "metadata": {
     "system": "Jatayu Marine Alert System v3.2.1",
-    "last_updated": "2025-09-28T15:45:00Z",
+    "last_updated": "2025-10-03T15:45:00Z",
     "alert_categories": [
       "environmental",
       "species_conservation",
@@ -24,8 +24,8 @@
   },
   "active_alerts": [
     {
-      "alert_id": "ALT-2025-0928-001",
-      "timestamp": "2025-09-28T14:30:00Z",
+      "alert_id": "ALT-2025-1003-001",
+      "timestamp": "2025-10-03T14:30:00Z",
       "category": "hab_bloom",
       "severity": "high",
       "title": "Harmful Algal Bloom Detected - Kerala Coast",
