@@ -1,17 +1,17 @@
 {
   "metadata": {
     "monitoring_system": "Jatayu HAB Detection Network",
-    "last_updated": "2025-09-28T14:45:00Z",
+    "last_updated": "2025-10-03T14:45:00Z",
     "satellite_coverage": "MODIS Aqua/Terra, Sentinel-3",
     "alert_threshold": "chlorophyll_a > 10 μg/L"
   },
   "active_alerts": [
     {
-      "alert_id": "HAB-2025-0928-001",
+      "alert_id": "HAB-2025-1003-001",
       "location": "9.93°N, 76.27°E",
       "region_name": "Kerala Coast - Vembanad Lake",
       "severity": "High",
-      "timestamp": "2025-09-28T14:30:00Z",
+      "timestamp": "2025-10-03T14:30:00Z",
       "bloom_type": "Alexandrium minutum",
       "chlorophyll_concentration": 18.7,
       "affected_area_km2": 127,
@@ -28,11 +28,11 @@
       "estimated_duration_days": "5-7"
     },
     {
-      "alert_id": "HAB-2025-0927-002",
-      "location": "11.85°N, 75.15°E",
-      "region_name": "Calicut Coast",
+      "alert_id": "HAB-2025-1002-002",
+      "location": "13.09°N, 80.27°E",
+      "region_name": "Chennai Coast - Marina Beach",
       "severity": "Medium",
-      "timestamp": "2025-09-27T22:50:00Z",
+      "timestamp": "2025-10-02T22:50:00Z",
       "bloom_type": "Karenia brevis",
       "chlorophyll_concentration": 12.3,
       "affected_area_km2": 45,
@@ -49,11 +49,11 @@
       "estimated_duration_days": "3-4"
     },
     {
-      "alert_id": "HAB-2025-0926-003",
-      "location": "13.18°N, 73.85°E",
-      "region_name": "Goa North Coast",
-      "severity": "High",
-      "timestamp": "2025-09-26T07:25:00Z",
+      "alert_id": "HAB-2025-1001-003",
+      "location": "15.31°N, 74.12°E",
+      "region_name": "Goa Coast - Mormugao Bay",
+      "severity": "Low",
+      "timestamp": "2025-10-01T07:25:00Z",
       "bloom_type": "Pyrodinium bahamense",
       "chlorophyll_concentration": 21.5,
       "affected_area_km2": 89,
